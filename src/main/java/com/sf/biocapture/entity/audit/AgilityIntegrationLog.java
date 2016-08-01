@@ -15,7 +15,7 @@ public class AgilityIntegrationLog extends IEntity {
 	@Column(name = "REQUEST_XML", nullable = true, unique = false, length = 2048)
 	private String requestXml;
 	
-	@Column(name = "RESPONSE_XML", nullable = true, unique = false, length = 2048)
+	@Column(name = "RESPONSE_XML", nullable = true, unique = false, length = 4096)
 	private String responseXml;
 	
 	@Column(name = "MSISDN")

@@ -12,7 +12,7 @@ public class AgilityIntegrationLog extends IEntity {
 
 	private static final long serialVersionUID = -6499612972924898129L;
 	
-	@Column(name = "REQUEST_XML", nullable = true, unique = false, length = 2048)
+	@Column(name = "REQUEST_XML", nullable = true, unique = false, length = 4096)
 	private String requestXml;
 	
 	@Column(name = "RESPONSE_XML", nullable = true, unique = false, length = 4096)

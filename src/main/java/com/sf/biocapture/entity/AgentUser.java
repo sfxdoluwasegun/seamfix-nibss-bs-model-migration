@@ -17,7 +17,7 @@ public class AgentUser extends KMUser {
 		super();
 	}
 
-	public Boolean getOnboarded() {
+	public Boolean isOnboarded() {
 		return onboarded;
 	}
 

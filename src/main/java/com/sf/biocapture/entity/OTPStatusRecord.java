@@ -1,9 +1,12 @@
 
 package com.sf.biocapture.entity;
 
+import com.sf.biocapture.entity.enums.OtpStatusRecordTypeEnum;
 import java.sql.Timestamp;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Table;
 import nw.orm.core.IEntity;
 import org.hibernate.envers.Audited;
@@ -19,9 +22,7 @@ import org.hibernate.envers.Audited;
 public class OTPStatusRecord extends IEntity
 {
     
-	private static final long serialVersionUID = 6628617560724577981L;
-	
-	@Column(name="otp",nullable = false)
+    @Column(name="otp",nullable = false)
     private String otp;
     @Column(name="msisdn",nullable = false)
     private String msisdn;
@@ -33,6 +34,9 @@ public class OTPStatusRecord extends IEntity
     private Timestamp timeGenerated;
     @Column(name="time_used")
     private Timestamp timeUsed;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "otp_status_record_type_enum", nullable = true) //this is made nullable because of existing records.
+    private OtpStatusRecordTypeEnum otpStatusRecordTypeEnum;
     
     public OTPStatusRecord() {       
     }
@@ -84,7 +88,13 @@ public class OTPStatusRecord extends IEntity
     public void setTimeUsed(Timestamp timeUsed) {
         this.timeUsed = timeUsed;
     }
-      
-    
+
+    public OtpStatusRecordTypeEnum getOtpStatusRecordTypeEnum() {
+        return otpStatusRecordTypeEnum;
+    }
+
+    public void setOtpStatusRecordTypeEnum(OtpStatusRecordTypeEnum otpStatusRecordTypeEnum) {
+        this.otpStatusRecordTypeEnum = otpStatusRecordTypeEnum;
+    }
 }
 

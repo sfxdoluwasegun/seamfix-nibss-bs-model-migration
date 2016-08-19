@@ -10,20 +10,19 @@ public class AgentUser extends KMUser {
 	/**
 	 * flag to determine if agents have been successfully onboarded
 	 */
-	@Column(name = "ONBOARDING_STATUS", nullable = true)
-	private Boolean onboardingStatus = false;
+	@Column(name = "ONBOARDED_", nullable = true)
+	private Boolean onboarded = false;
 	
 	public AgentUser(){
 		super();
 	}
 
-	public Boolean getOnboardingStatus() {
-		return onboardingStatus;
+	public Boolean getOnboarded() {
+		return onboarded;
 	}
 
-	public void setOnboardingStatus(Boolean onboardingStatus) {
-		this.onboardingStatus = onboardingStatus;
+	public void setOnboarded(Boolean onboarded) {
+		this.onboarded = onboarded;
 	}
-
 
 }

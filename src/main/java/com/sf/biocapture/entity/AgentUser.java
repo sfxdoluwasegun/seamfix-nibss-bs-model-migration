@@ -1,8 +1,11 @@
 package com.sf.biocapture.entity;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
+
 import com.sf.biocapture.entity.security.KMUser;
 
+@Entity
 public class AgentUser extends KMUser {
 
 	private static final long serialVersionUID = 5941913526756197845L;

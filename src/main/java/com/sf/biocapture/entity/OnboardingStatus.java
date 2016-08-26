@@ -15,6 +15,11 @@ import javax.persistence.TemporalType;
 
 import nw.orm.core.IEntity;
 
+/**
+ * 
+ * @author Nnanna, Marcel
+ */
+
 @Entity
 @Audited
 @Table(name = "ONBOARDING_STATUS")

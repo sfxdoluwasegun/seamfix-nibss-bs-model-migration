@@ -1,4 +1,4 @@
-package com.sf.biocapture.entity;
+package com.sf.biocapture.entity.onboarding;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

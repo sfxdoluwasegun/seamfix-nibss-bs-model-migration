@@ -38,7 +38,7 @@ public class OnboardingStatus extends IEntity {
 	private KMUser user;
         
 	@ManyToOne(optional = true)//made nullable to avoid constraint errors for existing records. this should rather be enforced in code
-	@JoinColumn(name = "0NBOARDED_BY_USER_FK")
+	@JoinColumn(name = "ONBOARDED_BY_USER_FK")
         private KMUser onboardedByUser;
         
         @Temporal(TemporalType.TIMESTAMP)

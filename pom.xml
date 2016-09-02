@@ -9,7 +9,7 @@
 		<dependency>
 			<groupId>com.seamfix.kyc</groupId>
 			<artifactId>base-model</artifactId>
-			<version>1.0.1-SNAPSHOT</version>
+			<version>1.0.2-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 	<distributionManagement>

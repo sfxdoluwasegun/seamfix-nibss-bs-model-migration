@@ -5,12 +5,10 @@
  */
 package com.sf.biocapture.entity.audit;
 
-import java.util.Date;
+import java.sql.Timestamp;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import nw.orm.core.IEntity;
 
 /**
@@ -33,19 +31,15 @@ public class ClientActivityLog extends IEntity {
     private String fullName;
     @Column(name = "ACTIVITY")
     private String activity;
-    @Column(name = "AFFECTED_RECORD")
-    private String affectedRecord;
+    @Column(name = "UNIQUE_ACTIVITY_CODE")
+    private String uniqueActivityCode;
     @Column(name = "ENROLLMENT_REF")
     private String enrollmentRef;
-    @Column(name = "DATE_LOGGED")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date dateLogged;
-    //enrollmentRef + client current time at creation time
-    @Column(name = "ACTIVATION_CODE")
-    private String activationCode;
-    @Column(name = "SYNCHED")
-    private Boolean synched;
-
+    @Column(name = "ACTIVITY_TIMESTAMP")
+    private Timestamp activityTimestamp;
+    @Column(name = "DURATION")
+    private Long duration;
+    
     public String getMacAddress() {
         return macAddress;
     }
@@ -86,14 +80,6 @@ public class ClientActivityLog extends IEntity {
         this.activity = activity;
     }
 
-    public String getAffectedRecord() {
-        return affectedRecord;
-    }
-
-    public void setAffectedRecord(String affectedRecord) {
-        this.affectedRecord = affectedRecord;
-    }
-
     public String getEnrollmentRef() {
         return enrollmentRef;
     }
@@ -102,28 +88,28 @@ public class ClientActivityLog extends IEntity {
         this.enrollmentRef = enrollmentRef;
     }
 
-    public Date getDateLogged() {
-        return dateLogged;
-    }
+	public String getUniqueActivityCode() {
+		return uniqueActivityCode;
+	}
 
-    public void setDateLogged(Date dateLogged) {
-        this.dateLogged = dateLogged;
-    }
+	public void setUniqueActivityCode(String uniqueActivityCode) {
+		this.uniqueActivityCode = uniqueActivityCode;
+	}
 
-    public String getActivationCode() {
-        return activationCode;
-    }
+	public Timestamp getActivityTimestamp() {
+		return activityTimestamp;
+	}
 
-    public void setActivationCode(String activationCode) {
-        this.activationCode = activationCode;
-    }
+	public void setActivityTimestamp(Timestamp activityTimestamp) {
+		this.activityTimestamp = activityTimestamp;
+	}
 
-    public Boolean getSynched() {
-        return synched;
-    }
+	public Long getDuration() {
+		return duration;
+	}
 
-    public void setSynched(Boolean synched) {
-        this.synched = synched;
-    }
+	public void setDuration(Long duration) {
+		this.duration = duration;
+	}
 
 }

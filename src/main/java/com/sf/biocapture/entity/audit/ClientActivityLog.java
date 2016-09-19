@@ -9,9 +9,6 @@ import java.sql.Timestamp;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-
 import nw.orm.core.IEntity;
 
 /**
@@ -39,7 +36,6 @@ public class ClientActivityLog extends IEntity {
     @Column(name = "ENROLLMENT_REF")
     private String enrollmentRef;
     @Column(name = "ACTIVITY_TIMESTAMP")
-    @Temporal(TemporalType.TIMESTAMP)
     private Timestamp activityTimestamp;
     @Column(name = "DURATION")
     private Long duration;

@@ -75,11 +75,13 @@ public class WebRegDemographics extends IEntity {
 	@Column(name = "REGISTRATION_TIMESTAMP")
 	private Timestamp registrationTimeStamp;
 	@Column(name = "REGISTRATION_TOKEN")
-	private Timestamp registrationToken;
+	private String registrationToken;
 	@Column(name = "SUBSCRIBER_TYPE")
 	private String subscriberType;
 	@Column(name = "UNIQUE_ID")
 	private String uniqueId;
+	@Column(name = "MSISDN")
+	private String msisdn;
 
 	//company 
 	@Column(name = "COMPANY_NAME")
@@ -243,10 +245,10 @@ public class WebRegDemographics extends IEntity {
 	public void setRegistrationTimeStamp(Timestamp registrationTimeStamp) {
 		this.registrationTimeStamp = registrationTimeStamp;
 	}
-	public Timestamp getRegistrationToken() {
+	public String getRegistrationToken() {
 		return registrationToken;
 	}
-	public void setRegistrationToken(Timestamp registrationToken) {
+	public void setRegistrationToken(String registrationToken) {
 		this.registrationToken = registrationToken;
 	}
 	public String getSubscriberType() {
@@ -308,5 +310,11 @@ public class WebRegDemographics extends IEntity {
 	}
 	public void setCompanyId(String companyId) {
 		this.companyId = companyId;
+	}
+	public String getMsisdn() {
+		return msisdn;
+	}
+	public void setMsisdn(String msisdn) {
+		this.msisdn = msisdn;
 	}
 }

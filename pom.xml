@@ -3,13 +3,13 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.seamfix.model</groupId>
 	<artifactId>bs-model</artifactId>
-	<version>1.0.9-SNAPSHOT</version>
+	<version>1.1.2-SNAPSHOT</version>
 	<name>KYC Services Model</name>
 	<dependencies>
 		<dependency>
 			<groupId>com.seamfix.kyc</groupId>
 			<artifactId>base-model</artifactId>
-			<version>1.0.2-SNAPSHOT</version>
+			<version>1.0.4-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 	<distributionManagement>

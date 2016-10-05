@@ -12,7 +12,7 @@ package com.sf.biocapture.entity.enums;
  */
 public enum OtpStatusRecordTypeEnum {
 
-    LOGIN("Login"), EMAIL_VALIDATION("Email Validation");
+    LOGIN("Login"), EMAIL_VALIDATION("Email Validation"), ONLINE_REGISTRATION("Online Registration");
 
     private OtpStatusRecordTypeEnum(String displayName) {
         this.displayName = displayName;

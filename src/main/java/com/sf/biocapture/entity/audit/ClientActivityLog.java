@@ -6,22 +6,26 @@
 package com.sf.biocapture.entity.audit;
 
 import java.sql.Timestamp;
+import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import nw.orm.core.IEntity;
 
 /**
  *
- * @author Marcel created on Jun 28, 2016, 1:47:03 PM
+ * @author Marcel
+ * @since Jun 28, 2016, 1:47:03 PM
  */
 @Entity
 @Table(name = "CLIENT_ACTIVITY_LOG")
 public class ClientActivityLog extends IEntity {
 
-	private static final long serialVersionUID = 7496626320926969760L;
-	
-	@Column(name = "MAC_ADDRESS")
+    private static final long serialVersionUID = 7496626320926969760L;
+
+    @Column(name = "MAC_ADDRESS")
     private String macAddress;
     @Column(name = "KIT_TAG")
     private String kitTag;
@@ -35,11 +39,15 @@ public class ClientActivityLog extends IEntity {
     private String uniqueActivityCode;
     @Column(name = "ENROLLMENT_REF")
     private String enrollmentRef;
-    @Column(name = "ACTIVITY_TIMESTAMP")
-    private Timestamp activityTimestamp;
+    @Column(name = "ACTIVITY_START_TIME")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date activityStartTime;
+    @Column(name = "ACTIVITY_END_TIME")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date activityEndTime;
     @Column(name = "DURATION")
     private Long duration;
-    
+
     public String getMacAddress() {
         return macAddress;
     }
@@ -88,28 +96,36 @@ public class ClientActivityLog extends IEntity {
         this.enrollmentRef = enrollmentRef;
     }
 
-	public String getUniqueActivityCode() {
-		return uniqueActivityCode;
-	}
+    public String getUniqueActivityCode() {
+        return uniqueActivityCode;
+    }
 
-	public void setUniqueActivityCode(String uniqueActivityCode) {
-		this.uniqueActivityCode = uniqueActivityCode;
-	}
+    public void setUniqueActivityCode(String uniqueActivityCode) {
+        this.uniqueActivityCode = uniqueActivityCode;
+    }
 
-	public Timestamp getActivityTimestamp() {
-		return activityTimestamp;
-	}
+    public Date getActivityStartTime() {
+        return activityStartTime;
+    }
 
-	public void setActivityTimestamp(Timestamp activityTimestamp) {
-		this.activityTimestamp = activityTimestamp;
-	}
+    public void setActivityStartTime(Date activityStartTime) {
+        this.activityStartTime = activityStartTime;
+    }
 
-	public Long getDuration() {
-		return duration;
-	}
+    public Date getActivityEndTime() {
+        return activityEndTime;
+    }
 
-	public void setDuration(Long duration) {
-		this.duration = duration;
-	}
+    public void setActivityEndTime(Date activityEndTime) {
+        this.activityEndTime = activityEndTime;
+    }
+
+    public Long getDuration() {
+        return duration;
+    }
+
+    public void setDuration(Long duration) {
+        this.duration = duration;
+    }
 
 }

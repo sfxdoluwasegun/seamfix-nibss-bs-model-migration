@@ -9,6 +9,8 @@ import javax.persistence.Table;
 import org.hibernate.envers.AuditOverride;
 import org.hibernate.envers.Audited;
 
+import com.sf.biocapture.entity.security.KMUser;
+
 import nw.orm.core.IEntity;
 import nw.orm.core.NwormEntity;
 
@@ -35,6 +37,10 @@ public class KycBroadcast extends IEntity {
 	@ManyToOne(optional = true)
 	@JoinColumn(name = "NODE_FK", nullable = true)
 	private Node targetNode;
+	
+	@ManyToOne(optional = true)
+	@JoinColumn(name = "USER_FK", nullable = true)
+	private KMUser targetUser;
 
 	public Node getTargetNode() {
 		return targetNode;
@@ -66,6 +72,14 @@ public class KycBroadcast extends IEntity {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public KMUser getTargetUser() {
+		return targetUser;
+	}
+
+	public void setTargetUser(KMUser targetUser) {
+		this.targetUser = targetUser;
 	}
 
 }

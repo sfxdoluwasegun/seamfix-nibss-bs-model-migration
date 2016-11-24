@@ -3,6 +3,8 @@ package com.sf.biocapture.entity.audit;
 import java.sql.Timestamp;
 
 import javax.persistence.Column;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 
 import com.sf.biocapture.entity.enums.SimSwapStatus;
 
@@ -80,6 +82,7 @@ public class SimSwapLog extends IEntity {
 	/**
 	 * status of the sim swap
 	 */
+	@Enumerated(EnumType.STRING)
 	@Column(name = "SWAP_STATUS", nullable = false)
 	private SimSwapStatus swapStatus;
 	

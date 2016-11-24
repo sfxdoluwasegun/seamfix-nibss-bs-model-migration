@@ -3,8 +3,10 @@ package com.sf.biocapture.entity.audit;
 import java.sql.Timestamp;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.Table;
 
 import com.sf.biocapture.entity.enums.SimSwapStatus;
 
@@ -16,6 +18,8 @@ import nw.orm.core.IEntity;
  * @since 24/11/2016
  *
  */
+@Entity
+@Table(name = "SIM_SWAP_LOG")
 public class SimSwapLog extends IEntity {
 	private static final long serialVersionUID = 1860292452405267656L;
 

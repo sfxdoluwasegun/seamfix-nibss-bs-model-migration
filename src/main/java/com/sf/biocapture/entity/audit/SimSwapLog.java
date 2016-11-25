@@ -9,6 +9,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.Table;
 
 import com.sf.biocapture.entity.enums.SimSwapStatus;
+import javax.persistence.Lob;
 
 import nw.orm.core.IEntity;
 
@@ -89,6 +90,13 @@ public class SimSwapLog extends IEntity {
 	@Enumerated(EnumType.STRING)
 	@Column(name = "SWAP_STATUS", nullable = false)
 	private SimSwapStatus swapStatus;
+        
+        /**
+         * 
+         */
+	@Lob
+	@Column(name = "SUBSCRIBER_PASSPORT", nullable = true)
+        private byte [] subscriberPassport;
 	
 	public SimSwapLog(){}
 
@@ -179,4 +187,12 @@ public class SimSwapLog extends IEntity {
 	public void setSwapTime(Timestamp swapTime) {
 		this.swapTime = swapTime;
 	}
+
+        public byte[] getSubscriberPassport() {
+            return subscriberPassport;
+        }
+
+        public void setSubscriberPassport(byte[] subscriberPassport) {
+            this.subscriberPassport = subscriberPassport;
+        }        
 }

@@ -91,9 +91,9 @@ public class SimSwapLog extends IEntity {
 	@Column(name = "SWAP_STATUS", nullable = false)
 	private SimSwapStatus swapStatus;
         
-        /**
-         * 
-         */
+	/**
+	 * portrait of the subscriber who carried out the swap
+	 */
 	@Lob
 	@Column(name = "SUBSCRIBER_PASSPORT", nullable = true)
         private byte [] subscriberPassport;

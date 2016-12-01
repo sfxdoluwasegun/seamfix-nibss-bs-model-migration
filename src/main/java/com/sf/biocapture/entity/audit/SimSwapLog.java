@@ -67,6 +67,12 @@ public class SimSwapLog extends IEntity {
 	private String macAddress;
 	
 	/**
+	 * unique ID
+	 */
+	@Column(name = "UNIQUE_ID", nullable = false)
+	private String uniqueId;
+	
+	/**
 	 * email address of the agent doing the swap
 	 */
 	@Column(name = "AGENT_EMAIL", nullable = false)
@@ -194,5 +200,13 @@ public class SimSwapLog extends IEntity {
 
         public void setSubscriberPassport(byte[] subscriberPassport) {
             this.subscriberPassport = subscriberPassport;
-        }        
+        }
+
+		public String getUniqueId() {
+			return uniqueId;
+		}
+
+		public void setUniqueId(String uniqueId) {
+			this.uniqueId = uniqueId;
+		}        
 }

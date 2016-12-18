@@ -5,6 +5,7 @@
  */
 package com.sf.biocapture.entity.audit;
 
+import java.sql.Timestamp;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,15 +16,16 @@ import nw.orm.core.IEntity;
 
 /**
  *
- * @author Marcel created on Jun 28, 2016, 1:47:03 PM
+ * @author Marcel
+ * @since Jun 28, 2016, 1:47:03 PM
  */
 @Entity
 @Table(name = "CLIENT_ACTIVITY_LOG")
 public class ClientActivityLog extends IEntity {
 
-	private static final long serialVersionUID = 7496626320926969760L;
-	
-	@Column(name = "MAC_ADDRESS")
+    private static final long serialVersionUID = 7496626320926969760L;
+
+    @Column(name = "MAC_ADDRESS")
     private String macAddress;
     @Column(name = "KIT_TAG")
     private String kitTag;
@@ -33,18 +35,18 @@ public class ClientActivityLog extends IEntity {
     private String fullName;
     @Column(name = "ACTIVITY")
     private String activity;
-    @Column(name = "AFFECTED_RECORD")
-    private String affectedRecord;
+    @Column(name = "UNIQUE_ACTIVITY_CODE")
+    private String uniqueActivityCode;
     @Column(name = "ENROLLMENT_REF")
     private String enrollmentRef;
-    @Column(name = "DATE_LOGGED")
+    @Column(name = "ACTIVITY_START_TIME")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date dateLogged;
-    //enrollmentRef + client current time at creation time
-    @Column(name = "ACTIVATION_CODE")
-    private String activationCode;
-    @Column(name = "SYNCHED")
-    private Boolean synched;
+    private Date activityStartTime;
+    @Column(name = "ACTIVITY_END_TIME")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date activityEndTime;
+    @Column(name = "DURATION")
+    private Long duration;
 
     public String getMacAddress() {
         return macAddress;
@@ -86,14 +88,6 @@ public class ClientActivityLog extends IEntity {
         this.activity = activity;
     }
 
-    public String getAffectedRecord() {
-        return affectedRecord;
-    }
-
-    public void setAffectedRecord(String affectedRecord) {
-        this.affectedRecord = affectedRecord;
-    }
-
     public String getEnrollmentRef() {
         return enrollmentRef;
     }
@@ -102,28 +96,36 @@ public class ClientActivityLog extends IEntity {
         this.enrollmentRef = enrollmentRef;
     }
 
-    public Date getDateLogged() {
-        return dateLogged;
+    public String getUniqueActivityCode() {
+        return uniqueActivityCode;
     }
 
-    public void setDateLogged(Date dateLogged) {
-        this.dateLogged = dateLogged;
+    public void setUniqueActivityCode(String uniqueActivityCode) {
+        this.uniqueActivityCode = uniqueActivityCode;
     }
 
-    public String getActivationCode() {
-        return activationCode;
+    public Date getActivityStartTime() {
+        return activityStartTime;
     }
 
-    public void setActivationCode(String activationCode) {
-        this.activationCode = activationCode;
+    public void setActivityStartTime(Date activityStartTime) {
+        this.activityStartTime = activityStartTime;
     }
 
-    public Boolean getSynched() {
-        return synched;
+    public Date getActivityEndTime() {
+        return activityEndTime;
     }
 
-    public void setSynched(Boolean synched) {
-        this.synched = synched;
+    public void setActivityEndTime(Date activityEndTime) {
+        this.activityEndTime = activityEndTime;
+    }
+
+    public Long getDuration() {
+        return duration;
+    }
+
+    public void setDuration(Long duration) {
+        this.duration = duration;
     }
 
 }

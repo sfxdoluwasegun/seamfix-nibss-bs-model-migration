@@ -3,13 +3,18 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.seamfix.model</groupId>
 	<artifactId>bs-model</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>1.2.3-SNAPSHOT</version>
 	<name>KYC Services Model</name>
 	<dependencies>
 		<dependency>
+			<groupId>com.seamfix.kyc</groupId>
+			<artifactId>base-model</artifactId>
+			<version>1.0.5-SNAPSHOT</version>
+		</dependency>
+		<dependency>
 			<groupId>com.seamfix.model</groupId>
-			<artifactId>kyc-model-base</artifactId>
-			<version>1.0.1-SNAPSHOT</version>
+			<artifactId>km-model</artifactId>
+			<version>1.0.8-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 	<distributionManagement>
@@ -24,4 +29,7 @@
 			<url>http://singlewindow.seamfix.com:7997/nexus/content/repositories/snapshots</url>
 		</snapshotRepository>
 	</distributionManagement>
+	<scm>
+		<url>http://singlewindow.seamfix.com/kyc/bs-model.git</url>
+	</scm>
 </project>

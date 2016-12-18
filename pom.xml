@@ -14,7 +14,7 @@
 		<dependency>
 			<groupId>com.seamfix.model</groupId>
 			<artifactId>km-model</artifactId>
-			<version>1.0.8-final</version>
+			<version>1.0.8-SNAPSHOTS</version>
 		</dependency>
 	</dependencies>
 	<distributionManagement>

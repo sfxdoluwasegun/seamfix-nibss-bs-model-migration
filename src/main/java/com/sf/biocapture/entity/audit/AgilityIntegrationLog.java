@@ -7,7 +7,7 @@ import javax.persistence.Table;
 import nw.orm.core.IEntity;
 
 @Entity
-@Table(name = "AGILITY_INTEGRATION_LOG")
+@Table(name = "AGILITY_INTEGRATION_LOGS")
 public class AgilityIntegrationLog extends IEntity {
 
 	private static final long serialVersionUID = -6499612972924898129L;

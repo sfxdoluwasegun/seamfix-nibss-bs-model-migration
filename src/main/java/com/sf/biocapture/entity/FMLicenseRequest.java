@@ -1,5 +1,6 @@
 package com.sf.biocapture.entity;
 
+import com.sf.biocapture.entity.enums.FMLicenseRequestTypeEnum;
 import java.sql.Timestamp;
 
 import javax.persistence.Column;
@@ -13,10 +14,12 @@ import nw.orm.core.IEntity;
 import org.hibernate.envers.Audited;
 
 import com.sf.biocapture.entity.security.KMUser;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 
 /**
- * Finger matching license request
- * entity
+ * Finger matching license request entity
+ *
  * @author Nnanna
  *
  */
@@ -25,128 +28,141 @@ import com.sf.biocapture.entity.security.KMUser;
 @Table(name = "FM_LICENSE_REQUEST")
 public class FMLicenseRequest extends IEntity {
 
-	private static final long serialVersionUID = -3016989490300638529L;
-	
-	@Column(name = "KIT_TAG", nullable = false)
-	private String kitTag;
-	
-	@Column(name = "MAC_ADDRESS", nullable = false)
-	private String macAddress;
-	
-	@Column(name = "AGENT_NAME")
-	private String agentName;
-	
-	@Column(name = "EMAIL_ADDRESS", nullable = false)
-	private String emailAddress;
-	
-	@Column(name = "COMMENTS", nullable = true)
-	private String comments;
-	
-	@Column(name = "IS_APPROVED", nullable = true)
-	private Boolean approved;
-	
-	@Column(name = "REQUEST_DATE", nullable = false)
-	private Timestamp requestDate;
-	
-	@Column(name = "APPROVAL_DATE", nullable = true)
-	private Timestamp approvalDate;
-	
-	@ManyToOne(optional = false)
-	@JoinColumn(name = "REQUESTED_BY", nullable = false)
-	private KMUser requestedBy;
-	
-	@ManyToOne(optional = true)
-	@JoinColumn(name = "APPROVED_BY", nullable = true)
-	private KMUser approvedBy;
-	
-	@Column(name = "LICENSE_HASH", nullable = true)
-	private String licenseHash;
+    private static final long serialVersionUID = -3016989490300638529L;
 
-	public String getLicenseHash() {
-		return licenseHash;
-	}
+    @Column(name = "KIT_TAG", nullable = false)
+    private String kitTag;
 
-	public void setLicenseHash(String licenseHash) {
-		this.licenseHash = licenseHash;
-	}
+    @Column(name = "MAC_ADDRESS", nullable = false)
+    private String macAddress;
 
-	public String getKitTag() {
-		return kitTag;
-	}
+    @Column(name = "AGENT_NAME")
+    private String agentName;
 
-	public void setKitTag(String kitTag) {
-		this.kitTag = kitTag;
-	}
+    @Column(name = "EMAIL_ADDRESS", nullable = false)
+    private String emailAddress;
 
-	public String getMacAddress() {
-		return macAddress;
-	}
+    @Column(name = "COMMENTS", nullable = true)
+    private String comments;
 
-	public void setMacAddress(String macAddress) {
-		this.macAddress = macAddress;
-	}
+    @Column(name = "IS_APPROVED", nullable = true)
+    private Boolean approved;
 
-	public String getAgentName() {
-		return agentName;
-	}
+    @Column(name = "REQUEST_DATE", nullable = false)
+    private Timestamp requestDate;
 
-	public void setAgentName(String agentName) {
-		this.agentName = agentName;
-	}
+    @Column(name = "APPROVAL_DATE", nullable = true)
+    private Timestamp approvalDate;
 
-	public String getEmailAddress() {
-		return emailAddress;
-	}
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "REQUESTED_BY", nullable = false)
+    private KMUser requestedBy;
 
-	public void setEmailAddress(String emailAddress) {
-		this.emailAddress = emailAddress;
-	}
+    @ManyToOne(optional = true)
+    @JoinColumn(name = "APPROVED_BY", nullable = true)
+    private KMUser approvedBy;
 
-	public String getComments() {
-		return comments;
-	}
+    @Column(name = "LICENSE_HASH", nullable = true)
+    private String licenseHash;
 
-	public void setComments(String comments) {
-		this.comments = comments;
-	}
+    @Enumerated(EnumType.STRING)
+    @Column(name = "LICENSE_REQUEST_TYPE")
+    private FMLicenseRequestTypeEnum licenseRequestType = FMLicenseRequestTypeEnum.SINGLE;
 
-	public Boolean getApproved() {
-		return approved;
-	}
+    public String getLicenseHash() {
+        return licenseHash;
+    }
 
-	public void setApproved(Boolean approved) {
-		this.approved = approved;
-	}
+    public void setLicenseHash(String licenseHash) {
+        this.licenseHash = licenseHash;
+    }
 
-	public Timestamp getRequestDate() {
-		return requestDate;
-	}
+    public String getKitTag() {
+        return kitTag;
+    }
 
-	public void setRequestDate(Timestamp requestDate) {
-		this.requestDate = requestDate;
-	}
+    public void setKitTag(String kitTag) {
+        this.kitTag = kitTag;
+    }
 
-	public Timestamp getApprovalDate() {
-		return approvalDate;
-	}
+    public String getMacAddress() {
+        return macAddress;
+    }
 
-	public void setApprovalDate(Timestamp approvalDate) {
-		this.approvalDate = approvalDate;
-	}
+    public void setMacAddress(String macAddress) {
+        this.macAddress = macAddress;
+    }
 
-	public KMUser getApprovedBy() {
-		return approvedBy;
-	}
+    public String getAgentName() {
+        return agentName;
+    }
 
-	public void setApprovedBy(KMUser approvedBy) {
-		this.approvedBy = approvedBy;
-	}
+    public void setAgentName(String agentName) {
+        this.agentName = agentName;
+    }
 
-	public KMUser getRequestedBy() {
-		return requestedBy;
-	}
+    public String getEmailAddress() {
+        return emailAddress;
+    }
 
-	public void setRequestedBy(KMUser requestedBy) {
-		this.requestedBy = requestedBy;
-	}
+    public void setEmailAddress(String emailAddress) {
+        this.emailAddress = emailAddress;
+    }
+
+    public String getComments() {
+        return comments;
+    }
+
+    public void setComments(String comments) {
+        this.comments = comments;
+    }
+
+    public Boolean getApproved() {
+        return approved;
+    }
+
+    public void setApproved(Boolean approved) {
+        this.approved = approved;
+    }
+
+    public Timestamp getRequestDate() {
+        return requestDate;
+    }
+
+    public void setRequestDate(Timestamp requestDate) {
+        this.requestDate = requestDate;
+    }
+
+    public Timestamp getApprovalDate() {
+        return approvalDate;
+    }
+
+    public void setApprovalDate(Timestamp approvalDate) {
+        this.approvalDate = approvalDate;
+    }
+
+    public KMUser getApprovedBy() {
+        return approvedBy;
+    }
+
+    public void setApprovedBy(KMUser approvedBy) {
+        this.approvedBy = approvedBy;
+    }
+
+    public KMUser getRequestedBy() {
+        return requestedBy;
+    }
+
+    public void setRequestedBy(KMUser requestedBy) {
+        this.requestedBy = requestedBy;
+    }
+
+    public FMLicenseRequestTypeEnum getLicenseRequestType() {
+        return licenseRequestType;
+    }
+
+    public void setLicenseRequestType(FMLicenseRequestTypeEnum licenseRequestType) {
+        this.licenseRequestType = licenseRequestType;
+    }
+
 }

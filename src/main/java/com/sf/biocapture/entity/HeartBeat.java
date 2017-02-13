@@ -85,7 +85,10 @@ public class HeartBeat extends BaseEntity {
 	private Long dailyConfirmed;
 
         @Column(name = "APP_VERSION")
-	private String appVersion;
+	private String appVersion;        
+        
+        @Column(name = "THRESHOLD_VERSION")
+	private String thresholdVersion;
         
 	public HeartBeat() {
 		
@@ -254,4 +257,11 @@ public class HeartBeat extends BaseEntity {
 		this.dailyConfirmed = dailyConfirmed;
 	}
 
+        public String getThresholdVersion() {
+            return thresholdVersion;
+        }
+
+        public void setThresholdVersion(String thresholdVersion) {
+            this.thresholdVersion = thresholdVersion;
+        }
 }

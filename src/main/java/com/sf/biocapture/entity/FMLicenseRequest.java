@@ -72,7 +72,7 @@ public class FMLicenseRequest extends IEntity {
     private FMLicenseRequestTypeEnum licenseRequestType = FMLicenseRequestTypeEnum.SINGLE;
     
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "ENROLLMENT_REF", nullable = true)
+    @JoinColumn(name = "ENROLLMENT_REF_FK", nullable = true)
     private EnrollmentRef enrollmentRef;
 
     public String getLicenseHash() {

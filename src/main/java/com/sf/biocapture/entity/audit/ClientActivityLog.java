@@ -47,7 +47,6 @@ public class ClientActivityLog extends IEntity {
     private Date activityEndTime;
     @Column(name = "DURATION")
     private Long duration;
-    
     @Column(name = "DEVICE_ID")
     private String deviceId;
     

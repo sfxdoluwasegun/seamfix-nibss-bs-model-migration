@@ -103,7 +103,13 @@ public class SimSwapLog extends IEntity {
 	@Lob
 	@Column(name = "SUBSCRIBER_PASSPORT", nullable = true)
         private byte [] subscriberPassport;
-	
+        
+        /**
+         * Client Device's id 
+         */
+	@Column(name = "device_id", nullable = true)
+        private String deviceId;
+        
 	public SimSwapLog(){}
 
 	public String getMsisdn() {
@@ -197,6 +203,16 @@ public class SimSwapLog extends IEntity {
         public byte[] getSubscriberPassport() {
             return subscriberPassport;
         }
+
+        public String getDeviceId() {
+            return deviceId;
+        }
+
+        public void setDeviceId(String deviceId) {
+            this.deviceId = deviceId;
+        }
+        
+        
 
         public void setSubscriberPassport(byte[] subscriberPassport) {
             this.subscriberPassport = subscriberPassport;

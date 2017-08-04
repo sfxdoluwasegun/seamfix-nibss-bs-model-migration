@@ -16,6 +16,8 @@ import org.hibernate.envers.Audited;
 import com.sf.biocapture.entity.security.KMUser;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
+import javax.persistence.OneToOne;
 
 /**
  * Finger matching license request entity
@@ -68,6 +70,10 @@ public class FMLicenseRequest extends IEntity {
     @Enumerated(EnumType.STRING)
     @Column(name = "LICENSE_REQUEST_TYPE")
     private FMLicenseRequestTypeEnum licenseRequestType = FMLicenseRequestTypeEnum.SINGLE;
+    
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "ENROLLMENT_REF_FK", nullable = true)
+    private EnrollmentRef enrollmentRef;
 
     public String getLicenseHash() {
         return licenseHash;
@@ -165,4 +171,11 @@ public class FMLicenseRequest extends IEntity {
         this.licenseRequestType = licenseRequestType;
     }
 
+    public EnrollmentRef getEnrollmentRef() {
+	return enrollmentRef;
+    }
+
+    public void setEnrollmentRef(EnrollmentRef enrollmentRef) {
+    	this.enrollmentRef = enrollmentRef;
+    }
 }

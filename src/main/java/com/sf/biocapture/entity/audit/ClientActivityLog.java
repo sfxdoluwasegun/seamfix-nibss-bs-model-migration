@@ -134,7 +134,7 @@ public class ClientActivityLog extends IEntity {
         return deviceId;
     }
     
-    public void setDeviceId(String deviceId){
+    public void setDeviceId (String deviceId){
         this.deviceId = deviceId;
     }
 

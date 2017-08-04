@@ -90,6 +90,9 @@ public class HeartBeat extends BaseEntity {
         @Column(name = "THRESHOLD_VERSION")
 	private String thresholdVersion;
         
+        @Column(name = "DEVICE_ID")
+	private String deviceId;
+    
 	public HeartBeat() {
 		
 	}
@@ -263,5 +266,13 @@ public class HeartBeat extends BaseEntity {
 
         public void setThresholdVersion(String thresholdVersion) {
             this.thresholdVersion = thresholdVersion;
+        }
+        
+        public String getDeviceId() {
+            return deviceId;
+        }
+
+        public void setDeviceId(String deviceId) {
+            this.deviceId = deviceId;
         }
 }

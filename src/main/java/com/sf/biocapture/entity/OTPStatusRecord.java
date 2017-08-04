@@ -9,14 +9,12 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.Table;
 import nw.orm.core.IEntity;
-import org.hibernate.envers.Audited;
 
 
 /**
  *
  * @author wizzyclems
  */
-@Audited
 @Entity
 @Table(name = "OTP_STATUS_RECORD")
 public class OTPStatusRecord extends IEntity

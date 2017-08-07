@@ -218,11 +218,11 @@ public class SimSwapLog extends IEntity {
             this.subscriberPassport = subscriberPassport;
         }
 
-		public String getUniqueId() {
-			return uniqueId;
-		}
+        public String getUniqueId() {
+                return uniqueId;
+        }
 
-		public void setUniqueId(String uniqueId) {
-			this.uniqueId = uniqueId;
-		}        
+        public void setUniqueId(String uniqueId) {
+                this.uniqueId = uniqueId;
+        }        
 }

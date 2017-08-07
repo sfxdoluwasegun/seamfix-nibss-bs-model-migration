@@ -113,7 +113,7 @@ public class SimSwapLog extends IEntity {
          */
         @ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "ENROLLMENT_REF_FK", nullable = true)
-        private EnrollmentRef ref;
+        private EnrollmentRef enrollmentRef;
         
 	public SimSwapLog(){}
 
@@ -209,12 +209,12 @@ public class SimSwapLog extends IEntity {
             return subscriberPassport;
         }
 
-        public EnrollmentRef getRef() {
-            return ref;
+        public EnrollmentRef getEnrollmentRef() {
+            return enrollmentRef;
         }
 
-        public void setRef(EnrollmentRef ref) {
-            this.ref = ref;
+        public void setRef(EnrollmentRef enrollmentRef) {
+            this.enrollmentRef = enrollmentRef;
         }
 
         public void setSubscriberPassport(byte[] subscriberPassport) {

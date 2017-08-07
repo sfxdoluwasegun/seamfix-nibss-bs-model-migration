@@ -217,9 +217,6 @@ public class SimSwapLog extends IEntity {
             this.ref = ref;
         }
 
-            
-        
-
         public void setSubscriberPassport(byte[] subscriberPassport) {
             this.subscriberPassport = subscriberPassport;
         }

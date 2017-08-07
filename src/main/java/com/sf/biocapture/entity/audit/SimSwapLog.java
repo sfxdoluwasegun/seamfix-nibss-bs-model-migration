@@ -1,5 +1,6 @@
 package com.sf.biocapture.entity.audit;
 
+import com.sf.biocapture.entity.EnrollmentRef;
 import java.sql.Timestamp;
 
 import javax.persistence.Column;
@@ -9,7 +10,10 @@ import javax.persistence.Enumerated;
 import javax.persistence.Table;
 
 import com.sf.biocapture.entity.enums.SimSwapStatus;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
+import javax.persistence.ManyToOne;
 
 import nw.orm.core.IEntity;
 
@@ -105,10 +109,11 @@ public class SimSwapLog extends IEntity {
         private byte [] subscriberPassport;
         
         /**
-         * Client Device's id 
+         * Enrollment Ref
          */
-	@Column(name = "device_id", nullable = true)
-        private String deviceId;
+        @ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "ENROLLMENT_REF_FK", nullable = true)
+        private EnrollmentRef ref;
         
 	public SimSwapLog(){}
 
@@ -204,14 +209,15 @@ public class SimSwapLog extends IEntity {
             return subscriberPassport;
         }
 
-        public String getDeviceId() {
-            return deviceId;
+        public EnrollmentRef getRef() {
+            return ref;
         }
 
-        public void setDeviceId(String deviceId) {
-            this.deviceId = deviceId;
+        public void setRef(EnrollmentRef ref) {
+            this.ref = ref;
         }
-        
+
+            
         
 
         public void setSubscriberPassport(byte[] subscriberPassport) {

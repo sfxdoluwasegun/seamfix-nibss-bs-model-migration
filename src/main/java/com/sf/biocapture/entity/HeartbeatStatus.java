@@ -59,7 +59,7 @@ public class HeartbeatStatus extends IEntity {
     @Column(name = "LATITUDE")
     private Double latitude;
 
-    @Column(name = "REF_DEVICE_ID")
+    @Column(name = "REF_DEVICE_ID", unique = true)
     private String refDeviceId;
 
     @Column(name = "REALTIME_DEVICE_ID")

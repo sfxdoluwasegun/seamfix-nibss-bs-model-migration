@@ -67,6 +67,9 @@ public class HeartbeatStatus extends IEntity {
 
     @Column(name = "NETWORK_STRENGTH")
     private String networkStrength;
+    
+    @Column(name = "NETWORK_CONNECTION_TYPE")
+    private String networkConnectionType;
 
     @Column(name = "ROOTED")
     private Boolean rooted;
@@ -215,6 +218,14 @@ public class HeartbeatStatus extends IEntity {
         this.networkStrength = networkStrength;
     }
 
+    public String getNetworkConnectionType() {
+        return networkConnectionType;
+    }
+
+    public void setNetworkConnectionType(String networkConnectionType) {
+        this.networkConnectionType = networkConnectionType;
+    }
+    
     public Boolean getRooted() {
         return rooted;
     }

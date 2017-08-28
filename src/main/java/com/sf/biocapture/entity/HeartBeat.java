@@ -16,386 +16,417 @@ import com.sf.biocapture.entity.base.BaseEntity;
 @Table(name = "HEART_BEAT")
 public class HeartBeat extends BaseEntity {
 
-	private static final long serialVersionUID = 2209898864458919730L;
-	
-	@Column(name = "TAG")
-	private String tag;
-	
-	@Column(name = "AGENT_NAME")
-	private String agentName;
-	
-	@Column(name = "AGENT_MOBILE")
-	private String agentMobile;
-	
-	@Column(name = "MAC_ADDRESS")
-	private String macAddress;
-	
-	@Column(name = "DEPLOY_STATE")
-	private String deployState;
-	
-	@Column(name = "CAMERA_STATUS")
-	private String cameraStatus;
-	
-	@Column(name = "SCANNER_STATUS")
-	private String scannerStatus;
-	
-	@Column(name = "CLIENT_TIME_STATUS")
-	private String clientTimeStatus;
-	
-	@Column(name = "CLIENT_UPTIME")
-	private Long clientUptime;
-	
-	@Column(name = "RECEIPT_TIMESTAMP", nullable = false)
-	private Timestamp receiptTimestamp;
-	
-	@Column(name = "LONGITUDE")
-	private Double longitude;
-	
-	@Column(name = "LATITUDE")
-	private Double latitude;
-	
-	@Column(name = "MODEM_SERIAL")
-	private String modemSerial;
-	
-	@Column(name = "MODEM_MODEL")
-	private String modemModel;
-	
-	@Column(name = "MODEM_SIGNAL_LEVEL")
-	private String modemSignalLevel;
-	
-	@Column(name = "LOGIN_UPTIME")
-	private Long loginUptime;
-	
-	@Column(name = "TOTAL_REGISTERED")
-	private Long totalRegistered;
-	
-	@Column(name = "TOTAL_SENT")
-	private Long totalSent;
-	
-	@Column(name = "TOTAL_CONFIRMED")
-	private Long totalConfirmed;
-	
-	@Column(name = "DAILY_REGISTERED")
-	private Long dailyRegistered;
-	
-	@Column(name = "DAILY_SENT")
-	private Long dailySent;
-	
-	@Column(name = "DAILY_CONFIRMED")
-	private Long dailyConfirmed;
+    private static final long serialVersionUID = 2209898864458919730L;
 
-        @Column(name = "APP_VERSION")
-	private String appVersion;        
-        
-        @Column(name = "THRESHOLD_VERSION")
-	private String thresholdVersion;
-        
-        @Column(name = "REF_DEVICE_ID")
-	private String refDeviceId;
-        
-        @Column(name = "REALTIME_DEVICE_ID")
-	private String realTimeDeviceId;
-        
-        @Column(name = "NEWORK_STRENGTH")
-        private String networkStrength;
-        
-        @Column(name = "ROOTED")
-        private Boolean rooted;
-        
-        @Column(name = "OS_NAME")
-        private String osName;
-        
-        @Column(name = "OS_VERSION")
-        private String osVersion;
-        
-        @Column(name = "LOCATION_INFORMATION_SOURCE")
-        private String locationInformationSource;
-        
-        @Column(name = "PROCESSOR_SPEED")
-        private String processorSpeed;
-        
-        @Column(name = "USED_STORAGE")
-        private String usedStorage;
-        
-        @Column(name = "AVAILABLE_STORAGE")
-        private String availableStorage;
-        
-        @Column(name = "TOTAL_STORAGE")
-        private String totalStorage;
-        
-        @Column(name = "RAM_SIZE")
-        private String ramSize;
-    
-	public HeartBeat() {
-		
-	}
+    @Column(name = "TAG")
+    private String tag;
 
-        public String getAppVersion() {
-            return appVersion;
-        }
+    @Column(name = "AGENT_NAME")
+    private String agentName;
 
-        public void setAppVersion(String appVersion) {
-            this.appVersion = appVersion;
-        }
-	
-	public String getTag() {
-		return this.tag;
-	}
+    @Column(name = "AGENT_MOBILE")
+    private String agentMobile;
 
-	public void setTag(String tag) {
-		this.tag = tag;
-	}
-	public String getAgentName() {
-		return this.agentName;
-	}
+    @Column(name = "MAC_ADDRESS")
+    private String macAddress;
 
-	public void setAgentName(String agentName) {
-		this.agentName = agentName;
-	}
-	public String getAgentMobile() {
-		return this.agentMobile;
-	}
+    @Column(name = "DEPLOY_STATE")
+    private String deployState;
 
-	public void setAgentMobile(String agentMobile) {
-		this.agentMobile = agentMobile;
-	}
-	public String getMacAddress() {
-		return this.macAddress;
-	}
+    @Column(name = "CAMERA_STATUS")
+    private String cameraStatus;
 
-	public void setMacAddress(String macAddress) {
-		this.macAddress = macAddress;
-	}
-	public String getDeployState() {
-		return this.deployState;
-	}
+    @Column(name = "SCANNER_STATUS")
+    private String scannerStatus;
 
-	public void setDeployState(String deployState) {
-		this.deployState = deployState;
-	}
-	public String getCameraStatus() {
-		return this.cameraStatus;
-	}
+    @Column(name = "CLIENT_TIME_STATUS")
+    private String clientTimeStatus;
 
-	public void setCameraStatus(String cameraStatus) {
-		this.cameraStatus = cameraStatus;
-	}
-	public String getScannerStatus() {
-		return this.scannerStatus;
-	}
+    @Column(name = "CLIENT_UPTIME")
+    private Long clientUptime;
 
-	public void setScannerStatus(String scannerStatus) {
-		this.scannerStatus = scannerStatus;
-	}
-	public String getClientTimeStatus() {
-		return this.clientTimeStatus;
-	}
+    @Column(name = "RECEIPT_TIMESTAMP", nullable = false)
+    private Timestamp receiptTimestamp;
 
-	public void setClientTimeStatus(String clientTimeStatus) {
-		this.clientTimeStatus = clientTimeStatus;
-	}
-	public Long getClientUptime() {
-		return this.clientUptime;
-	}
+    @Column(name = "LONGITUDE")
+    private Double longitude;
 
-	public void setClientUptime(Long clientUptime) {
-		this.clientUptime = clientUptime;
-	}
-	public Timestamp getReceiptTimestamp() {
-		return this.receiptTimestamp;
-	}
+    @Column(name = "LATITUDE")
+    private Double latitude;
 
-	public void setReceiptTimestamp(Timestamp receiptTimestamp) {
-		this.receiptTimestamp = receiptTimestamp;
-	}
-	public Double getLongitude() {
-		return this.longitude;
-	}
+    @Column(name = "MODEM_SERIAL")
+    private String modemSerial;
 
-	public void setLongitude(Double longitude) {
-		this.longitude = longitude;
-	}
-	public Double getLatitude() {
-		return this.latitude;
-	}
+    @Column(name = "MODEM_MODEL")
+    private String modemModel;
 
-	public void setLatitude(Double latitude) {
-		this.latitude = latitude;
-	}
-	public String getModemSerial() {
-		return this.modemSerial;
-	}
+    @Column(name = "MODEM_SIGNAL_LEVEL")
+    private String modemSignalLevel;
 
-	public void setModemSerial(String modemSerial) {
-		this.modemSerial = modemSerial;
-	}
-	public String getModemModel() {
-		return this.modemModel;
-	}
+    @Column(name = "LOGIN_UPTIME")
+    private Long loginUptime;
 
-	public void setModemModel(String modemModel) {
-		this.modemModel = modemModel;
-	}
-	public String getModemSignalLevel() {
-		return this.modemSignalLevel;
-	}
+    @Column(name = "TOTAL_REGISTERED")
+    private Long totalRegistered;
 
-	public void setModemSignalLevel(String modemSignalLevel) {
-		this.modemSignalLevel = modemSignalLevel;
-	}
-	public Long getLoginUptime() {
-		return this.loginUptime;
-	}
+    @Column(name = "TOTAL_SENT")
+    private Long totalSent;
 
-	public void setLoginUptime(Long loginUptime) {
-		this.loginUptime = loginUptime;
-	}
-	public Long getTotalRegistered() {
-		return this.totalRegistered;
-	}
+    @Column(name = "TOTAL_CONFIRMED")
+    private Long totalConfirmed;
 
-	public void setTotalRegistered(Long totalRegistered) {
-		this.totalRegistered = totalRegistered;
-	}
-	public Long getTotalSent() {
-		return this.totalSent;
-	}
+    @Column(name = "DAILY_REGISTERED")
+    private Long dailyRegistered;
 
-	public void setTotalSent(Long totalSent) {
-		this.totalSent = totalSent;
-	}
-	public Long getTotalConfirmed() {
-		return this.totalConfirmed;
-	}
+    @Column(name = "DAILY_SENT")
+    private Long dailySent;
 
-	public void setTotalConfirmed(Long totalConfirmed) {
-		this.totalConfirmed = totalConfirmed;
-	}
-	public Long getDailyRegistered() {
-		return this.dailyRegistered;
-	}
+    @Column(name = "DAILY_CONFIRMED")
+    private Long dailyConfirmed;
 
-	public void setDailyRegistered(Long dailyRegistered) {
-		this.dailyRegistered = dailyRegistered;
-	}
-	public Long getDailySent() {
-		return this.dailySent;
-	}
+    @Column(name = "APP_VERSION")
+    private String appVersion;
 
-	public void setDailySent(Long dailySent) {
-		this.dailySent = dailySent;
-	}
-	public Long getDailyConfirmed() {
-		return this.dailyConfirmed;
-	}
+    @Column(name = "THRESHOLD_VERSION")
+    private String thresholdVersion;
 
-	public void setDailyConfirmed(Long dailyConfirmed) {
-		this.dailyConfirmed = dailyConfirmed;
-	}
+    @Column(name = "REF_DEVICE_ID")
+    private String refDeviceId;
 
-        public String getThresholdVersion() {
-            return thresholdVersion;
-        }
+    @Column(name = "REALTIME_DEVICE_ID")
+    private String realTimeDeviceId;
 
-        public void setThresholdVersion(String thresholdVersion) {
-            this.thresholdVersion = thresholdVersion;
-        }
+    @Column(name = "NETWORK_STRENGTH")
+    private String networkStrength;
 
-        public String getRefDeviceId() {
-            return refDeviceId;
-        }
+    @Column(name = "NETWORK_CONNECTION_TYPE")
+    private String networkConnectionType;
 
-        public void setRefDeviceId(String refDeviceId) {
-            this.refDeviceId = refDeviceId;
-        }
+    @Column(name = "ROOTED")
+    private Boolean rooted;
 
-        public String getRealTimeDeviceId() {
-            return realTimeDeviceId;
-        }
+    @Column(name = "OS_NAME")
+    private String osName;
 
-        public void setRealTimeDeviceId(String realTimeDeviceId) {
-            this.realTimeDeviceId = realTimeDeviceId;
-        }
+    @Column(name = "OS_VERSION")
+    private String osVersion;
 
-        public String getNetworkStrength() {
-            return networkStrength;
-        }
+    @Column(name = "LOCATION_INFORMATION_SOURCE")
+    private String locationInformationSource;
 
-        public void setNetworkStrength(String networkStrength) {
-            this.networkStrength = networkStrength;
-        }
+    @Column(name = "PROCESSOR_SPEED")
+    private String processorSpeed;
 
-        public Boolean getRooted() {
-            return rooted;
-        }
+    @Column(name = "USED_STORAGE")
+    private String usedStorage;
 
-        public void setRooted(Boolean rooted) {
-            this.rooted = rooted;
-        }
+    @Column(name = "AVAILABLE_STORAGE")
+    private String availableStorage;
 
-        public String getOsName() {
-            return osName;
-        }
+    @Column(name = "TOTAL_STORAGE")
+    private String totalStorage;
 
-        public void setOsName(String osName) {
-            this.osName = osName;
-        }
+    @Column(name = "RAM_SIZE")
+    private String ramSize;
 
-        public String getOsVersion() {
-            return osVersion;
-        }
+    public HeartBeat() {
 
-        public void setOsVersion(String osVersion) {
-            this.osVersion = osVersion;
-        }
+    }
 
-        public String getLocationInformationSource() {
-            return locationInformationSource;
-        }
+    public String getAppVersion() {
+        return appVersion;
+    }
 
-        public void setLocationInformationSource(String locationInformationSource) {
-            this.locationInformationSource = locationInformationSource;
-        }
+    public void setAppVersion(String appVersion) {
+        this.appVersion = appVersion;
+    }
 
-        public String getProcessorSpeed() {
-            return processorSpeed;
-        }
+    public String getTag() {
+        return this.tag;
+    }
 
-        public void setProcessorSpeed(String processorSpeed) {
-            this.processorSpeed = processorSpeed;
-        }
+    public void setTag(String tag) {
+        this.tag = tag;
+    }
 
-        public String getUsedStorage() {
-            return usedStorage;
-        }
+    public String getAgentName() {
+        return this.agentName;
+    }
 
-        public void setUsedStorage(String usedStorage) {
-            this.usedStorage = usedStorage;
-        }
+    public void setAgentName(String agentName) {
+        this.agentName = agentName;
+    }
 
-        public String getAvailableStorage() {
-            return availableStorage;
-        }
+    public String getAgentMobile() {
+        return this.agentMobile;
+    }
 
-        public void setAvailableStorage(String availableStorage) {
-            this.availableStorage = availableStorage;
-        }
+    public void setAgentMobile(String agentMobile) {
+        this.agentMobile = agentMobile;
+    }
 
-        public String getTotalStorage() {
-            return totalStorage;
-        }
+    public String getMacAddress() {
+        return this.macAddress;
+    }
 
-        public void setTotalStorage(String totalStorage) {
-            this.totalStorage = totalStorage;
-        }
+    public void setMacAddress(String macAddress) {
+        this.macAddress = macAddress;
+    }
 
-        public String getRamSize() {
-            return ramSize;
-        }
+    public String getDeployState() {
+        return this.deployState;
+    }
 
-        public void setRamSize(String ramSize) {
-            this.ramSize = ramSize;
-        }
-        
-        
+    public void setDeployState(String deployState) {
+        this.deployState = deployState;
+    }
+
+    public String getCameraStatus() {
+        return this.cameraStatus;
+    }
+
+    public void setCameraStatus(String cameraStatus) {
+        this.cameraStatus = cameraStatus;
+    }
+
+    public String getScannerStatus() {
+        return this.scannerStatus;
+    }
+
+    public void setScannerStatus(String scannerStatus) {
+        this.scannerStatus = scannerStatus;
+    }
+
+    public String getClientTimeStatus() {
+        return this.clientTimeStatus;
+    }
+
+    public void setClientTimeStatus(String clientTimeStatus) {
+        this.clientTimeStatus = clientTimeStatus;
+    }
+
+    public Long getClientUptime() {
+        return this.clientUptime;
+    }
+
+    public void setClientUptime(Long clientUptime) {
+        this.clientUptime = clientUptime;
+    }
+
+    public Timestamp getReceiptTimestamp() {
+        return this.receiptTimestamp;
+    }
+
+    public void setReceiptTimestamp(Timestamp receiptTimestamp) {
+        this.receiptTimestamp = receiptTimestamp;
+    }
+
+    public Double getLongitude() {
+        return this.longitude;
+    }
+
+    public void setLongitude(Double longitude) {
+        this.longitude = longitude;
+    }
+
+    public Double getLatitude() {
+        return this.latitude;
+    }
+
+    public void setLatitude(Double latitude) {
+        this.latitude = latitude;
+    }
+
+    public String getModemSerial() {
+        return this.modemSerial;
+    }
+
+    public void setModemSerial(String modemSerial) {
+        this.modemSerial = modemSerial;
+    }
+
+    public String getModemModel() {
+        return this.modemModel;
+    }
+
+    public void setModemModel(String modemModel) {
+        this.modemModel = modemModel;
+    }
+
+    public String getModemSignalLevel() {
+        return this.modemSignalLevel;
+    }
+
+    public void setModemSignalLevel(String modemSignalLevel) {
+        this.modemSignalLevel = modemSignalLevel;
+    }
+
+    public Long getLoginUptime() {
+        return this.loginUptime;
+    }
+
+    public void setLoginUptime(Long loginUptime) {
+        this.loginUptime = loginUptime;
+    }
+
+    public Long getTotalRegistered() {
+        return this.totalRegistered;
+    }
+
+    public void setTotalRegistered(Long totalRegistered) {
+        this.totalRegistered = totalRegistered;
+    }
+
+    public Long getTotalSent() {
+        return this.totalSent;
+    }
+
+    public void setTotalSent(Long totalSent) {
+        this.totalSent = totalSent;
+    }
+
+    public Long getTotalConfirmed() {
+        return this.totalConfirmed;
+    }
+
+    public void setTotalConfirmed(Long totalConfirmed) {
+        this.totalConfirmed = totalConfirmed;
+    }
+
+    public Long getDailyRegistered() {
+        return this.dailyRegistered;
+    }
+
+    public void setDailyRegistered(Long dailyRegistered) {
+        this.dailyRegistered = dailyRegistered;
+    }
+
+    public Long getDailySent() {
+        return this.dailySent;
+    }
+
+    public void setDailySent(Long dailySent) {
+        this.dailySent = dailySent;
+    }
+
+    public Long getDailyConfirmed() {
+        return this.dailyConfirmed;
+    }
+
+    public void setDailyConfirmed(Long dailyConfirmed) {
+        this.dailyConfirmed = dailyConfirmed;
+    }
+
+    public String getThresholdVersion() {
+        return thresholdVersion;
+    }
+
+    public void setThresholdVersion(String thresholdVersion) {
+        this.thresholdVersion = thresholdVersion;
+    }
+
+    public String getRefDeviceId() {
+        return refDeviceId;
+    }
+
+    public void setRefDeviceId(String refDeviceId) {
+        this.refDeviceId = refDeviceId;
+    }
+
+    public String getRealTimeDeviceId() {
+        return realTimeDeviceId;
+    }
+
+    public void setRealTimeDeviceId(String realTimeDeviceId) {
+        this.realTimeDeviceId = realTimeDeviceId;
+    }
+
+    public String getNetworkStrength() {
+        return networkStrength;
+    }
+
+    public void setNetworkStrength(String networkStrength) {
+        this.networkStrength = networkStrength;
+    }
+
+    public String getNetworkConnectionType() {
+        return networkConnectionType;
+    }
+
+    public void setNetworkConnectionType(String networkConnectionType) {
+        this.networkConnectionType = networkConnectionType;
+    }
+
+    public Boolean getRooted() {
+        return rooted;
+    }
+
+    public void setRooted(Boolean rooted) {
+        this.rooted = rooted;
+    }
+
+    public String getOsName() {
+        return osName;
+    }
+
+    public void setOsName(String osName) {
+        this.osName = osName;
+    }
+
+    public String getOsVersion() {
+        return osVersion;
+    }
+
+    public void setOsVersion(String osVersion) {
+        this.osVersion = osVersion;
+    }
+
+    public String getLocationInformationSource() {
+        return locationInformationSource;
+    }
+
+    public void setLocationInformationSource(String locationInformationSource) {
+        this.locationInformationSource = locationInformationSource;
+    }
+
+    public String getProcessorSpeed() {
+        return processorSpeed;
+    }
+
+    public void setProcessorSpeed(String processorSpeed) {
+        this.processorSpeed = processorSpeed;
+    }
+
+    public String getUsedStorage() {
+        return usedStorage;
+    }
+
+    public void setUsedStorage(String usedStorage) {
+        this.usedStorage = usedStorage;
+    }
+
+    public String getAvailableStorage() {
+        return availableStorage;
+    }
+
+    public void setAvailableStorage(String availableStorage) {
+        this.availableStorage = availableStorage;
+    }
+
+    public String getTotalStorage() {
+        return totalStorage;
+    }
+
+    public void setTotalStorage(String totalStorage) {
+        this.totalStorage = totalStorage;
+    }
+
+    public String getRamSize() {
+        return ramSize;
+    }
+
+    public void setRamSize(String ramSize) {
+        this.ramSize = ramSize;
+    }
+
 }

@@ -5,19 +5,53 @@
  */
 package com.sf.biocapture.entity;
 
+import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import nw.orm.core.IEntity;
 
 /**
  *
- * @author PC
+ * @author Marcel
  * @since Aug 25, 2017 - 4:25:20 PM
  */
 @Entity
 @Table(name = "HEART_BEAT_STATUS")
 public class HeartbeatStatus extends IEntity {
+
+    @Column(name = "TAG")
+    private String tag;
+
+    @Column(name = "AGENT_NAME")
+    private String agentName;
+
+    @Column(name = "AGENT_MOBILE")
+    private String agentMobile;
+
+    @Column(name = "MAC_ADDRESS")
+    private String macAddress;
+
+    @Column(name = "DEPLOY_STATE")
+    private String deployState;
+
+    @Column(name = "CAMERA_STATUS")
+    private String cameraStatus;
+
+    @Column(name = "SCANNER_STATUS")
+    private String scannerStatus;
+
+    @Column(name = "CLIENT_TIME_STATUS")
+    private String clientTimeStatus;
+
+    @Column(name = "CLIENT_UPTIME")
+    private Long clientUptime;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "RECEIPT_DATE")
+    private Date receiptDate;
 
     @Column(name = "LONGITUDE")
     private Double longitude;
@@ -31,8 +65,11 @@ public class HeartbeatStatus extends IEntity {
     @Column(name = "REALTIME_DEVICE_ID")
     private String realtimeDeviceId;
 
-    @Column(name = "NEWORK_STRENGTH")
+    @Column(name = "NETWORK_STRENGTH")
     private String networkStrength;
+    
+    @Column(name = "NETWORK_CONNECTION_TYPE")
+    private String networkConnectionType;
 
     @Column(name = "ROOTED")
     private Boolean rooted;
@@ -60,6 +97,86 @@ public class HeartbeatStatus extends IEntity {
 
     @Column(name = "RAM_SIZE")
     private String ramSize;
+
+    public String getTag() {
+        return tag;
+    }
+
+    public void setTag(String tag) {
+        this.tag = tag;
+    }
+
+    public String getAgentName() {
+        return agentName;
+    }
+
+    public void setAgentName(String agentName) {
+        this.agentName = agentName;
+    }
+
+    public String getAgentMobile() {
+        return agentMobile;
+    }
+
+    public void setAgentMobile(String agentMobile) {
+        this.agentMobile = agentMobile;
+    }
+
+    public String getMacAddress() {
+        return macAddress;
+    }
+
+    public void setMacAddress(String macAddress) {
+        this.macAddress = macAddress;
+    }
+
+    public String getDeployState() {
+        return deployState;
+    }
+
+    public void setDeployState(String deployState) {
+        this.deployState = deployState;
+    }
+
+    public String getCameraStatus() {
+        return cameraStatus;
+    }
+
+    public void setCameraStatus(String cameraStatus) {
+        this.cameraStatus = cameraStatus;
+    }
+
+    public String getScannerStatus() {
+        return scannerStatus;
+    }
+
+    public void setScannerStatus(String scannerStatus) {
+        this.scannerStatus = scannerStatus;
+    }
+
+    public String getClientTimeStatus() {
+        return clientTimeStatus;
+    }
+
+    public void setClientTimeStatus(String clientTimeStatus) {
+        this.clientTimeStatus = clientTimeStatus;
+    }
+
+    public Long getClientUptime() {
+        return clientUptime;
+    }
+
+    public void setClientUptime(Long clientUptime) {
+        this.clientUptime = clientUptime;
+    }
+
+    public Date getReceiptDate() {
+        return receiptDate;
+    }
+
+    public void setReceiptDate(Date receiptDate) {
+        this.receiptDate = receiptDate;
+    }
 
     public Double getLongitude() {
         return longitude;
@@ -101,6 +218,14 @@ public class HeartbeatStatus extends IEntity {
         this.networkStrength = networkStrength;
     }
 
+    public String getNetworkConnectionType() {
+        return networkConnectionType;
+    }
+
+    public void setNetworkConnectionType(String networkConnectionType) {
+        this.networkConnectionType = networkConnectionType;
+    }
+    
     public Boolean getRooted() {
         return rooted;
     }

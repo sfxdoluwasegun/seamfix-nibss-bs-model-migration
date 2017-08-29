@@ -100,6 +100,9 @@ public class HeartbeatStatus extends IEntity {
 
     @Column(name = "RAM_SIZE")
     private String ramSize;
+    
+    @Column(name = "COORDINATE_ADDRESS")
+    private String coordinateAddress;
 
     public String getTag() {
         return tag;
@@ -307,6 +310,14 @@ public class HeartbeatStatus extends IEntity {
 
     public void setRamSize(String ramSize) {
         this.ramSize = ramSize;
+    }
+
+    public String getCoordinateAddress() {
+        return coordinateAddress;
+    }
+
+    public void setCoordinateAddress(String coordinateAddress) {
+        this.coordinateAddress = coordinateAddress;
     }
 
 }

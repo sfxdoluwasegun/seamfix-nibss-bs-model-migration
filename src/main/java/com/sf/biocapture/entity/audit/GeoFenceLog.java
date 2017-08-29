@@ -29,8 +29,8 @@ public class GeoFenceLog extends IEntity {
     @Column(name = "LATITUDE")
     private Double latitude;
 
-    @Column(name = "ADDRESS")
-    private String address;
+    @Column(name = "COORDINATE_ADDRESS")
+    private String coordinateAddress;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "HEART_BEAT_STATUS_FK", nullable = false)
@@ -52,14 +52,14 @@ public class GeoFenceLog extends IEntity {
         this.latitude = latitude;
     }
 
-    public String getAddress() {
-        return address;
+    public String getCoordinateAddress() {
+        return coordinateAddress;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setCoordinateAddress(String coordinateAddress) {
+        this.coordinateAddress = coordinateAddress;
     }
-
+    
     public HeartbeatStatus getHeartbeatStatus() {
         return heartbeatStatus;
     }

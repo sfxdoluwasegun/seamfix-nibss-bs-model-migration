@@ -59,7 +59,7 @@ public class HeartbeatStatus extends IEntity {
     @Column(name = "LATITUDE")
     private Double latitude;
 
-    @Column(name = "REF_DEVICE_ID")
+    @Column(name = "REF_DEVICE_ID", unique = true)
     private String refDeviceId;
 
     @Column(name = "REALTIME_DEVICE_ID")
@@ -82,6 +82,9 @@ public class HeartbeatStatus extends IEntity {
 
     @Column(name = "LOCATION_INFORMATION_SOURCE")
     private String locationInformationSource;
+    
+    @Column(name = "LOCATION_ACCURACY")
+    private Double locationAccuracy;
 
     @Column(name = "PROCESSOR_SPEED")
     private String processorSpeed;
@@ -256,6 +259,14 @@ public class HeartbeatStatus extends IEntity {
 
     public void setLocationInformationSource(String locationInformationSource) {
         this.locationInformationSource = locationInformationSource;
+    }
+
+    public Double getLocationAccuracy() {
+        return locationAccuracy;
+    }
+
+    public void setLocationAccuracy(Double locationAccuracy) {
+        this.locationAccuracy = locationAccuracy;
     }
 
     public String getProcessorSpeed() {

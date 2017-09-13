@@ -100,7 +100,10 @@ public class HeartBeat extends BaseEntity {
     private String networkStrength;
 
     @Column(name = "NETWORK_CONNECTION_TYPE")
-    private String networkConnectionType;
+    private String networkConnectionType;    
+    
+    @Column(name = "NETWORK_TYPE")
+    private String networkType;
 
     @Column(name = "ROOTED")
     private Boolean rooted;
@@ -438,6 +441,14 @@ public class HeartBeat extends BaseEntity {
 
     public void setRamSize(String ramSize) {
         this.ramSize = ramSize;
+    }
+
+    public String getNetworkType() {
+        return networkType;
+    }
+
+    public void setNetworkType(String networkType) {
+        this.networkType = networkType;
     }
 
 }

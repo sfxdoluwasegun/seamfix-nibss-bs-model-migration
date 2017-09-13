@@ -70,6 +70,9 @@ public class HeartbeatStatus extends IEntity {
     
     @Column(name = "NETWORK_CONNECTION_TYPE")
     private String networkConnectionType;
+    
+    @Column(name = "NETWORK_TYPE")
+    private String networkType;
 
     @Column(name = "ROOTED")
     private Boolean rooted;
@@ -320,4 +323,11 @@ public class HeartbeatStatus extends IEntity {
         this.coordinateAddress = coordinateAddress;
     }
 
+    public String getNetworkType() {
+        return networkType;
+    }
+
+    public void setNetworkType(String networkType) {
+        this.networkType = networkType;
+    }
 }

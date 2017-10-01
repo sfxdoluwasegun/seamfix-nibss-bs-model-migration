@@ -69,7 +69,7 @@ public class FMLicenseRequest extends IEntity {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "LICENSE_REQUEST_TYPE")
-    private FMLicenseRequestTypeEnum licenseRequestType = FMLicenseRequestTypeEnum.SINGLE;
+        private FMLicenseRequestTypeEnum licenseRequestType = FMLicenseRequestTypeEnum.SINGLE;
     
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ENROLLMENT_REF_FK", nullable = true)

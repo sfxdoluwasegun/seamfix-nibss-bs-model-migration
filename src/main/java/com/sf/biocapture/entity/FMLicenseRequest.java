@@ -63,6 +63,9 @@ public class FMLicenseRequest extends IEntity {
     @ManyToOne(optional = true)
     @JoinColumn(name = "APPROVED_BY", nullable = true)
     private KMUser approvedBy;
+    
+    @Column(name = "AUTHORIZED_BY_EMAIL_ADDRESS", nullable = false)
+    private String authorizedByEmailAddress;
 
     @Column(name = "LICENSE_HASH", nullable = true)
     private String licenseHash;
@@ -178,4 +181,13 @@ public class FMLicenseRequest extends IEntity {
     public void setEnrollmentRef(EnrollmentRef enrollmentRef) {
     	this.enrollmentRef = enrollmentRef;
     }
+
+    public String getAuthorizedByEmailAddress() {
+        return authorizedByEmailAddress;
+    }
+
+    public void setAuthorizedByEmailAddress(String authorizedByEmailAddress) {
+        this.authorizedByEmailAddress = authorizedByEmailAddress;
+    }
+    
 }

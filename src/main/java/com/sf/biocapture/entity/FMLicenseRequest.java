@@ -64,7 +64,7 @@ public class FMLicenseRequest extends IEntity {
     @JoinColumn(name = "APPROVED_BY", nullable = true)
     private KMUser approvedBy;
     
-    @Column(name = "AUTHORIZED_BY_EMAIL_ADDRESS", nullable = false)
+    @Column(name = "AUTHORIZED_BY_EMAIL_ADDRESS", nullable = true)
     private String authorizedByEmailAddress;
 
     @Column(name = "LICENSE_HASH", nullable = true)

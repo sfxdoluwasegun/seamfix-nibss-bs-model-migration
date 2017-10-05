@@ -64,7 +64,7 @@ public class FMLicenseRequest extends IEntity {
     @JoinColumn(name = "APPROVED_BY", nullable = true)
     private KMUser approvedBy;
     
-    @Column(name = "AUTHORIZED_BY_EMAIL_ADDRESS", nullable = false)
+    @Column(name = "AUTHORIZED_BY_EMAIL_ADDRESS", nullable = true)
     private String authorizedByEmailAddress;
 
     @Column(name = "LICENSE_HASH", nullable = true)
@@ -72,7 +72,7 @@ public class FMLicenseRequest extends IEntity {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "LICENSE_REQUEST_TYPE")
-    private FMLicenseRequestTypeEnum licenseRequestType = FMLicenseRequestTypeEnum.SINGLE;
+        private FMLicenseRequestTypeEnum licenseRequestType = FMLicenseRequestTypeEnum.SINGLE;
     
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ENROLLMENT_REF_FK", nullable = true)

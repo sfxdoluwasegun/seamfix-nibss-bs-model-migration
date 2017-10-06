@@ -31,6 +31,10 @@ public class AccessLog extends IEntity {
     @Enumerated(EnumType.STRING)
     @Column(name = "LOGIN_STATUS_ENUM")
     private LoginStatusEnum loginStatusEnum;
+    @Column(name = "REF_DEVICE_ID")
+    private String refDeviceId;
+    @Column(name = "REALTIME_DEVICE_ID")
+    private String realtimeDeviceId;
 
     public String getMacAddress() {
         return macAddress;
@@ -62,6 +66,22 @@ public class AccessLog extends IEntity {
 
     public void setLoginStatusEnum(LoginStatusEnum loginStatusEnum) {
         this.loginStatusEnum = loginStatusEnum;
+    }
+
+    public String getRefDeviceId() {
+        return refDeviceId;
+    }
+
+    public void setRefDeviceId(String refDeviceId) {
+        this.refDeviceId = refDeviceId;
+    }
+
+    public String getRealtimeDeviceId() {
+        return realtimeDeviceId;
+    }
+
+    public void setRealtimeDeviceId(String realtimeDeviceId) {
+        this.realtimeDeviceId = realtimeDeviceId;
     }
 
 }

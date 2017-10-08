@@ -106,6 +106,10 @@ public class HeartbeatStatus extends IEntity {
     
     @Column(name = "COORDINATE_ADDRESS")
     private String coordinateAddress;
+    
+    @Column(name = "APP_VERSION")
+    private String appVersion;
+
 
     public String getTag() {
         return tag;
@@ -329,5 +333,13 @@ public class HeartbeatStatus extends IEntity {
 
     public void setNetworkType(String networkType) {
         this.networkType = networkType;
+    }
+
+    public String getAppVersion() {
+        return appVersion;
+    }
+
+    public void setAppVersion(String appVersion) {
+        this.appVersion = appVersion;
     }
 }

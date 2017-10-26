@@ -100,8 +100,8 @@ public class HeartBeat extends BaseEntity {
     private String networkStrength;
 
     @Column(name = "NETWORK_CONNECTION_TYPE")
-    private String networkConnectionType;    
-    
+    private String networkConnectionType;
+
     @Column(name = "NETWORK_TYPE")
     private String networkType;
 
@@ -119,7 +119,7 @@ public class HeartBeat extends BaseEntity {
 
     @Column(name = "LOCATION_ACCURACY")
     private Double locationAccuracy;
-    
+
     @Column(name = "PROCESSOR_SPEED")
     private String processorSpeed;
 
@@ -134,6 +134,9 @@ public class HeartBeat extends BaseEntity {
 
     @Column(name = "RAM_SIZE")
     private String ramSize;
+
+    @Column(name = "MOCKED_COORDINATE")
+    private Boolean mockedCoordinate;
 
     public HeartBeat() {
 
@@ -449,6 +452,14 @@ public class HeartBeat extends BaseEntity {
 
     public void setNetworkType(String networkType) {
         this.networkType = networkType;
+    }
+
+    public Boolean getMockedCoordinate() {
+        return mockedCoordinate;
+    }
+
+    public void setMockedCoordinate(Boolean mockedCoordinate) {
+        this.mockedCoordinate = mockedCoordinate;
     }
 
 }

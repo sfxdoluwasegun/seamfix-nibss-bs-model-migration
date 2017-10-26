@@ -67,10 +67,10 @@ public class HeartbeatStatus extends IEntity {
 
     @Column(name = "NETWORK_STRENGTH")
     private String networkStrength;
-    
+
     @Column(name = "NETWORK_CONNECTION_TYPE")
     private String networkConnectionType;
-    
+
     @Column(name = "NETWORK_TYPE")
     private String networkType;
 
@@ -85,7 +85,7 @@ public class HeartbeatStatus extends IEntity {
 
     @Column(name = "LOCATION_INFORMATION_SOURCE")
     private String locationInformationSource;
-    
+
     @Column(name = "LOCATION_ACCURACY")
     private Double locationAccuracy;
 
@@ -103,13 +103,15 @@ public class HeartbeatStatus extends IEntity {
 
     @Column(name = "RAM_SIZE")
     private String ramSize;
-    
+
     @Column(name = "COORDINATE_ADDRESS")
     private String coordinateAddress;
-    
+
     @Column(name = "APP_VERSION")
     private String appVersion;
 
+    @Column(name = "MOCKED_COORDINATE")
+    private Boolean mockedCoordinate;
 
     public String getTag() {
         return tag;
@@ -238,7 +240,7 @@ public class HeartbeatStatus extends IEntity {
     public void setNetworkConnectionType(String networkConnectionType) {
         this.networkConnectionType = networkConnectionType;
     }
-    
+
     public Boolean getRooted() {
         return rooted;
     }
@@ -342,4 +344,13 @@ public class HeartbeatStatus extends IEntity {
     public void setAppVersion(String appVersion) {
         this.appVersion = appVersion;
     }
+
+    public Boolean getMockedCoordinate() {
+        return mockedCoordinate;
+    }
+
+    public void setMockedCoordinate(Boolean mockedCoordinate) {
+        this.mockedCoordinate = mockedCoordinate;
+    }
+
 }

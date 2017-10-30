@@ -12,7 +12,7 @@ package com.sf.biocapture.entity.enums;
  */
 public enum GeoFenceQuotaRequestTypeEnum {
 
-    GOOGLE("Google"), OPEN_STREET("Open Street");
+    GEO_CODING("Geo Coding"), REVERSE_GEO_CODING("Reverse Geo Coding");
 
     private GeoFenceQuotaRequestTypeEnum(String description) {
         this.description = description;

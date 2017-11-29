@@ -7,10 +7,16 @@ import javax.persistence.Table;
 import nw.orm.core.IEntity;
 
 @Entity
-@Table(name = "AGILITY_INTEGRATION_LOG_")
+@Table(name = "AGILITY_INTEGRATION_LOGS")
 public class AgilityIntegrationLog extends IEntity {
 
     private static final long serialVersionUID = -6499612972924898129L;
+
+    @Column(name = "REQUEST_XML", columnDefinition = "CLOB")
+    private String requestXml;
+
+    @Column(name = "RESPONSE_XML", columnDefinition = "CLOB")
+    private String responseXml;
 
     @Column(name = "MSISDN")
     private String msisdn;
@@ -32,6 +38,22 @@ public class AgilityIntegrationLog extends IEntity {
 
     @Column(name = "BACKUP_PATH")
     private String backupPath;
+
+    public String getRequestXml() {
+        return requestXml;
+    }
+
+    public void setRequestXml(String requestXml) {
+        this.requestXml = requestXml;
+    }
+
+    public String getResponseXml() {
+        return responseXml;
+    }
+
+    public void setResponseXml(String responseXml) {
+        this.responseXml = responseXml;
+    }
 
     public String getMsisdn() {
         return msisdn;

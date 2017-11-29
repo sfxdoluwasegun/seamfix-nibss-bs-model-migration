@@ -73,6 +73,12 @@ public class MasterList {
 	
 	@Column(name = "REGION")
 	private String region;
+        
+        @Column(name = "KIT_APP_VERSION", nullable = true)
+	private Float lastInstalledUpdate;
+        
+        @Column(name = "WHITELIST_STATUS", nullable = true)
+	private Boolean whitelistStatus;
 
 	public String getMachineSerialNumber() {
 		return machineSerialNumber;
@@ -242,5 +248,22 @@ public class MasterList {
 		this.noOfAgents = noOfAgents;
 	}
 
+    public Float getLastInstalledUpdate() {
+        return lastInstalledUpdate;
+    }
 
+    public void setLastInstalledUpdate(Float lastInstalledUpdate) {
+        this.lastInstalledUpdate = lastInstalledUpdate;
+    }
+
+    public Boolean getWhitelistStatus() {
+        return whitelistStatus;
+    }
+
+    public void setWhitelistStatus(Boolean whitelistStatus) {
+        this.whitelistStatus = whitelistStatus;
+    }
+
+
+        
 }

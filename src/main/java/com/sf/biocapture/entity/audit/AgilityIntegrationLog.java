@@ -10,83 +10,105 @@ import nw.orm.core.IEntity;
 @Table(name = "AGILITY_INTEGRATION_LOGS")
 public class AgilityIntegrationLog extends IEntity {
 
-	private static final long serialVersionUID = -6499612972924898129L;
-	
-	@Column(name = "REQUEST_XML", columnDefinition = "CLOB")
-	private String requestXml;
-	
-	@Column(name = "RESPONSE_XML", columnDefinition = "CLOB")
-	private String responseXml;
-	
-	@Column(name = "MSISDN")
-	private String msisdn;
-	
-	@Column(name = "SIM_SERIAL")
-	private String simSerial;
-	
-	@Column(name = "RESPONSE_CODE")
-	private String responseCode;
-	
-	@Column(name = "RESPONSE_DESCRIPTION")
-	private String responseDescription;
-	
-	@Column(name = "REQUEST_TYPE")
-	private String requestType;
+    private static final long serialVersionUID = -6499612972924898129L;
 
-	public String getRequestXml() {
-		return requestXml;
-	}
+    @Column(name = "REQUEST_XML", columnDefinition = "CLOB")
+    private String requestXml;
 
-	public void setRequestXml(String requestXml) {
-		this.requestXml = requestXml;
-	}
+    @Column(name = "RESPONSE_XML", columnDefinition = "CLOB")
+    private String responseXml;
 
-	public String getResponseXml() {
-		return responseXml;
-	}
+    @Column(name = "MSISDN")
+    private String msisdn;
 
-	public void setResponseXml(String responseXml) {
-		this.responseXml = responseXml;
-	}
+    @Column(name = "SIM_SERIAL")
+    private String simSerial;
 
-	public String getMsisdn() {
-		return msisdn;
-	}
+    @Column(name = "RESPONSE_CODE")
+    private String responseCode;
 
-	public void setMsisdn(String msisdn) {
-		this.msisdn = msisdn;
-	}
+    @Column(name = "RESPONSE_DESCRIPTION")
+    private String responseDescription;
 
-	public String getSimSerial() {
-		return simSerial;
-	}
+    @Column(name = "REQUEST_TYPE")
+    private String requestType;
 
-	public void setSimSerial(String simSerial) {
-		this.simSerial = simSerial;
-	}
+    @Column(name = "TRANSACTION_ID")
+    private String transactionId;
 
-	public String getResponseCode() {
-		return responseCode;
-	}
+    @Column(name = "BACKUP_PATH")
+    private String backupPath;
 
-	public void setResponseCode(String responseCode) {
-		this.responseCode = responseCode;
-	}
+    public String getRequestXml() {
+        return requestXml;
+    }
 
-	public String getResponseDescription() {
-		return responseDescription;
-	}
+    public void setRequestXml(String requestXml) {
+        this.requestXml = requestXml;
+    }
 
-	public void setResponseDescription(String responseDescription) {
-		this.responseDescription = responseDescription;
-	}
+    public String getResponseXml() {
+        return responseXml;
+    }
 
-	public String getRequestType() {
-		return requestType;
-	}
+    public void setResponseXml(String responseXml) {
+        this.responseXml = responseXml;
+    }
 
-	public void setRequestType(String requestType) {
-		this.requestType = requestType;
-	}
-	
+    public String getMsisdn() {
+        return msisdn;
+    }
+
+    public void setMsisdn(String msisdn) {
+        this.msisdn = msisdn;
+    }
+
+    public String getSimSerial() {
+        return simSerial;
+    }
+
+    public void setSimSerial(String simSerial) {
+        this.simSerial = simSerial;
+    }
+
+    public String getResponseCode() {
+        return responseCode;
+    }
+
+    public void setResponseCode(String responseCode) {
+        this.responseCode = responseCode;
+    }
+
+    public String getResponseDescription() {
+        return responseDescription;
+    }
+
+    public void setResponseDescription(String responseDescription) {
+        this.responseDescription = responseDescription;
+    }
+
+    public String getRequestType() {
+        return requestType;
+    }
+
+    public void setRequestType(String requestType) {
+        this.requestType = requestType;
+    }
+
+    public String getTransactionId() {
+        return transactionId;
+    }
+
+    public void setTransactionId(String transactionId) {
+        this.transactionId = transactionId;
+    }
+
+    public String getBackupPath() {
+        return backupPath;
+    }
+
+    public void setBackupPath(String backupPath) {
+        this.backupPath = backupPath;
+    }
+
 }

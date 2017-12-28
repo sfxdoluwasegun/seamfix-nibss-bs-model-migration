@@ -16,6 +16,7 @@ public enum OtpStatusRecordTypeEnum {
     EMAIL_VALIDATION("Email Validation"), 
     ONLINE_REGISTRATION("Online Registration"), 
     ONLINE_REGISTRATION_TOKEN("Online Registration Token"),
+    SELF_SERVICE_TOKEN(" Service Registration Token"),
     VTU_AGENT_VALIDATION("VTU Agent Validation");
 
     private OtpStatusRecordTypeEnum(String displayName) {

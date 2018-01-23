@@ -110,6 +110,9 @@ public class HeartbeatStatus extends IEntity {
     @Enumerated(EnumType.STRING)
     @Column(nullable = true, name = "HEART_BEAT_SOURCE")
     private HeartbeatSourceEnum heartBeatSource;
+    
+    @Column(name = "GEO_TRACKER_APP_VERSION")
+    private String geotrackerAppVersion;
 
     public String getTag() {
         return tag;
@@ -357,5 +360,13 @@ public class HeartbeatStatus extends IEntity {
 
     public void setHeartBeatSource(HeartbeatSourceEnum heartBeatSource) {
         this.heartBeatSource = heartBeatSource;
+    }
+
+    public String getGeotrackerAppVersion() {
+        return geotrackerAppVersion;
+    }
+
+    public void setGeotrackerAppVersion(String geotrackerAppVersion) {
+        this.geotrackerAppVersion = geotrackerAppVersion;
     }
 }

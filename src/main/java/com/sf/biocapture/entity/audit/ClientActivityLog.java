@@ -47,7 +47,11 @@ public class ClientActivityLog extends IEntity {
     private Date activityEndTime;
     @Column(name = "DURATION")
     private Long duration;
-
+    @Column(name = "REF_DEVICE_ID")
+    private String refDeviceId;
+    @Column(name = "REALTIME_DEVICE_ID")
+    private String realTimeDeviceId;
+    
     public String getMacAddress() {
         return macAddress;
     }
@@ -126,6 +130,22 @@ public class ClientActivityLog extends IEntity {
 
     public void setDuration(Long duration) {
         this.duration = duration;
+    }
+
+    public String getRefDeviceId() {
+        return refDeviceId;
+    }
+
+    public void setRefDeviceId(String refDeviceId) {
+        this.refDeviceId = refDeviceId;
+    }
+
+    public String getRealTimeDeviceId() {
+        return realTimeDeviceId;
+    }
+
+    public void setRealTimeDeviceId(String realTimeDeviceId) {
+        this.realTimeDeviceId = realTimeDeviceId;
     }
 
 }

@@ -28,6 +28,8 @@ public class KitMarker extends BaseEntity {
 	String tagId;
 	@Column(name = "MAC_ADDRESS")
 	String macAddress;
+        @Column(name = "DEVICE_ID")
+	String deviceId;
 	@Column(name = "DATE_ADDED")
 	Timestamp dateAdded;
 	@ManyToOne(optional = true)

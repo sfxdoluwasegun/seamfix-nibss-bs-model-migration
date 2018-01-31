@@ -30,8 +30,14 @@ public class TagHistory extends IEntity {
 	/**
 	 * mac address of the machine
 	 */
-	@Column(name = "MAC_ADDRESS", nullable = false, length = 128)
+	@Column(name = "MAC_ADDRESS", length = 128)
 	private String macAddress;
+        
+        /**
+         * device id of the machine
+         */
+        @Column(name = "DEVICE_ID" )
+        private String deviceId;
 	
 	/**
 	 * email address of the support user
@@ -63,6 +69,14 @@ public class TagHistory extends IEntity {
 	public void setMacAddress(String macAddress) {
 		this.macAddress = macAddress;
 	}
+
+        public String getDeviceId() {
+            return deviceId;
+        }
+
+        public void setDeviceId(String deviceId) {
+            this.deviceId = deviceId;
+        }
 
 	public String getAdminEmail() {
 		return adminEmail;

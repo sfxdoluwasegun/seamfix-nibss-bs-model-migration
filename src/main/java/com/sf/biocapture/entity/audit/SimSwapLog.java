@@ -1,5 +1,6 @@
 package com.sf.biocapture.entity.audit;
 
+import com.sf.biocapture.entity.EnrollmentRef;
 import java.sql.Timestamp;
 
 import javax.persistence.Column;
@@ -9,7 +10,10 @@ import javax.persistence.Enumerated;
 import javax.persistence.Table;
 
 import com.sf.biocapture.entity.enums.SimSwapStatus;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
+import javax.persistence.ManyToOne;
 
 import nw.orm.core.IEntity;
 
@@ -103,7 +107,14 @@ public class SimSwapLog extends IEntity {
 	@Lob
 	@Column(name = "SUBSCRIBER_PASSPORT", nullable = true)
         private byte [] subscriberPassport;
-	
+        
+        /**
+         * Enrollment Ref
+         */
+        @ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "ENROLLMENT_REF_FK", nullable = true)
+        private EnrollmentRef enrollmentRef;
+        
 	public SimSwapLog(){}
 
 	public String getMsisdn() {
@@ -198,15 +209,23 @@ public class SimSwapLog extends IEntity {
             return subscriberPassport;
         }
 
+        public EnrollmentRef getEnrollmentRef() {
+            return enrollmentRef;
+        }
+
+        public void setRef(EnrollmentRef enrollmentRef) {
+            this.enrollmentRef = enrollmentRef;
+        }
+
         public void setSubscriberPassport(byte[] subscriberPassport) {
             this.subscriberPassport = subscriberPassport;
         }
 
-		public String getUniqueId() {
-			return uniqueId;
-		}
+        public String getUniqueId() {
+                return uniqueId;
+        }
 
-		public void setUniqueId(String uniqueId) {
-			this.uniqueId = uniqueId;
-		}        
+        public void setUniqueId(String uniqueId) {
+                this.uniqueId = uniqueId;
+        }        
 }

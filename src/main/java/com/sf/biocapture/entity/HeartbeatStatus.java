@@ -10,8 +10,18 @@ import javax.persistence.*;
 
 import com.sf.biocapture.entity.enums.HeartbeatSourceEnum;
 import nw.orm.core.IEntity;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import nw.orm.core.IEntity;
 
-
+/**
+ *
+ * @author Marcel
+ * @since Aug 25, 2017 - 4:25:20 PM
+ */
 @Entity
 @Table(name = "HEART_BEAT_STATUS")
 public class HeartbeatStatus extends IEntity {
@@ -106,14 +116,12 @@ public class HeartbeatStatus extends IEntity {
 
     @Column(name = "MOCKED_COORDINATE")
     private Boolean mockedCoordinate;
-
     @Enumerated(EnumType.STRING)
     @Column(nullable = true, name = "HEART_BEAT_SOURCE")
     private HeartbeatSourceEnum heartBeatSource;
     
     @Column(name = "GEO_TRACKER_APP_VERSION")
     private String geotrackerAppVersion;
-
     public String getTag() {
         return tag;
     }

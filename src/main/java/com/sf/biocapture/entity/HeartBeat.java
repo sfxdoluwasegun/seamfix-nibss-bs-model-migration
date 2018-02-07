@@ -366,14 +366,6 @@ public class HeartBeat extends BaseEntity {
         this.networkConnectionType = networkConnectionType;
     }
 
-    public String getNetworkType() {
-        return networkType;
-    }
-
-    public void setNetworkType(String networkType) {
-        this.networkType = networkType;
-    }
-
     public Boolean getRooted() {
         return rooted;
     }
@@ -454,6 +446,14 @@ public class HeartBeat extends BaseEntity {
         this.ramSize = ramSize;
     }
 
+    public String getNetworkType() {
+        return networkType;
+    }
+
+    public void setNetworkType(String networkType) {
+        this.networkType = networkType;
+    }
+
     public Boolean getMockedCoordinate() {
         return mockedCoordinate;
     }
@@ -461,6 +461,5 @@ public class HeartBeat extends BaseEntity {
     public void setMockedCoordinate(Boolean mockedCoordinate) {
         this.mockedCoordinate = mockedCoordinate;
     }
-    
-    
+
 }

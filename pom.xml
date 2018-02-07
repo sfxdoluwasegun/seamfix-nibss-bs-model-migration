@@ -1,30 +1,30 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.seamfix.model</groupId>
-	<artifactId>bs-model</artifactId>
-	<version>1.3.8-FINAL</version>
-	<name>KYC Services Model</name>
-	<dependencies>
-		<dependency>
-			<groupId>com.seamfix.model</groupId>
-			<artifactId>km-model</artifactId>
-			<version>1.1.5-final</version>
-		</dependency>
-	</dependencies>
-	<distributionManagement>
-		<repository>
-			<id>deployment</id>
-			<name>Internal Releases</name>
-			<url>http://singlewindow.seamfix.com:7997/nexus/content/repositories/releases</url>
-		</repository>
-		<snapshotRepository>
-			<id>deployment</id>
-			<name>Internal Releases</name>
-			<url>http://singlewindow.seamfix.com:7997/nexus/content/repositories/snapshots</url>
-		</snapshotRepository>
-	</distributionManagement>
-	<scm>
-		<url>http://singlewindow.seamfix.com/kyc/bs-model.git</url>
-	</scm>
-</project>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.seamfix.model</groupId>
+    <artifactId>bs-model</artifactId>
+    <version>1.4.6-SNAPSHOT</version>
+    <name>KYC Services Model</name>
+    <dependencies>
+        <dependency>
+            <groupId>com.seamfix.model</groupId>
+            <artifactId>km-model</artifactId>
+            <version>1.4.9-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+    <distributionManagement>
+        <repository>
+            <id>deployment</id>
+            <name>Internal Releases</name>
+            <url>http://singlewindow.seamfix.com:7997/nexus/content/repositories/releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>deployment</id>
+            <name>Internal Releases</name>
+            <url>http://singlewindow.seamfix.com:7997/nexus/content/repositories/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+    <scm>
+        <url>http://singlewindow.seamfix.com/kyc/bs-model.git</url>
+    </scm>
+</project>

@@ -6,6 +6,10 @@
 package com.sf.biocapture.entity;
 
 import java.util.Date;
+import javax.persistence.*;
+
+import com.sf.biocapture.entity.enums.HeartbeatSourceEnum;
+import nw.orm.core.IEntity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -112,7 +116,12 @@ public class HeartbeatStatus extends IEntity {
 
     @Column(name = "MOCKED_COORDINATE")
     private Boolean mockedCoordinate;
-
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = true, name = "HEART_BEAT_SOURCE")
+    private HeartbeatSourceEnum heartBeatSource;
+    
+    @Column(name = "GEO_TRACKER_APP_VERSION")
+    private String geotrackerAppVersion;
     public String getTag() {
         return tag;
     }
@@ -353,4 +362,19 @@ public class HeartbeatStatus extends IEntity {
         this.mockedCoordinate = mockedCoordinate;
     }
 
+    public HeartbeatSourceEnum getHeartBeatSource() {
+        return heartBeatSource;
+    }
+
+    public void setHeartBeatSource(HeartbeatSourceEnum heartBeatSource) {
+        this.heartBeatSource = heartBeatSource;
+    }
+
+    public String getGeotrackerAppVersion() {
+        return geotrackerAppVersion;
+    }
+
+    public void setGeotrackerAppVersion(String geotrackerAppVersion) {
+        this.geotrackerAppVersion = geotrackerAppVersion;
+    }
 }

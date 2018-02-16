@@ -2,6 +2,7 @@ package com.sf.biocapture.entity;
 // Generated Jun 10, 2014 6:17:53 PM by Hibernate Tools 4.0.0
 
 import java.sql.Timestamp;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -137,6 +138,15 @@ public class HeartBeat extends BaseEntity {
 
     @Column(name = "MOCKED_COORDINATE")
     private Boolean mockedCoordinate;
+    
+    @Column(name = "PHONE_STATUS_ENABLED")
+    private Boolean phoneStatusEnabled;
+   
+    @Column(name = "LOCATION_PERMISSION_GRANTED")
+    private Boolean locationPermissionGranted;
+    
+    @Column(name = "LOCATION_GENERATION_TIME")
+    private Date locationGenerationTime;
 
     public HeartBeat() {
 
@@ -461,5 +471,29 @@ public class HeartBeat extends BaseEntity {
     public void setMockedCoordinate(Boolean mockedCoordinate) {
         this.mockedCoordinate = mockedCoordinate;
     }
+
+	public Boolean getPhoneStatusEnabled() {
+		return phoneStatusEnabled;
+	}
+
+	public void setPhoneStatusEnabled(Boolean phoneStatusEnabled) {
+		this.phoneStatusEnabled = phoneStatusEnabled;
+	}
+
+	public Boolean getLocationPermissionGranted() {
+		return locationPermissionGranted;
+	}
+
+	public void setLocationPermissionGranted(Boolean locationPermissionGranted) {
+		this.locationPermissionGranted = locationPermissionGranted;
+	}
+
+	public Date getLocationGenerationTime() {
+		return locationGenerationTime;
+	}
+
+	public void setLocationGenerationTime(Date locationGenerationTime) {
+		this.locationGenerationTime = locationGenerationTime;
+	}
 
 }

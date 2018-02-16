@@ -6,15 +6,17 @@
 package com.sf.biocapture.entity;
 
 import java.util.Date;
-import javax.persistence.*;
 
-import com.sf.biocapture.entity.enums.HeartbeatSourceEnum;
-import nw.orm.core.IEntity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import com.sf.biocapture.entity.enums.HeartbeatSourceEnum;
+
 import nw.orm.core.IEntity;
 
 /**
@@ -116,12 +118,23 @@ public class HeartbeatStatus extends IEntity {
 
     @Column(name = "MOCKED_COORDINATE")
     private Boolean mockedCoordinate;
+    
     @Enumerated(EnumType.STRING)
     @Column(nullable = true, name = "HEART_BEAT_SOURCE")
     private HeartbeatSourceEnum heartBeatSource;
     
     @Column(name = "GEO_TRACKER_APP_VERSION")
     private String geotrackerAppVersion;
+    
+    @Column(name = "PHONE_STATUS_ENABLED")
+    private Boolean phoneStatusEnabled;
+   
+    @Column(name = "LOCATION_PERMISSION_GRANTED")
+    private Boolean locationPermissionGranted;
+    
+    @Column(name = "LOCATION_GENERATION_TIME")
+    private Date locationGenerationTime;
+    
     public String getTag() {
         return tag;
     }
@@ -377,4 +390,28 @@ public class HeartbeatStatus extends IEntity {
     public void setGeotrackerAppVersion(String geotrackerAppVersion) {
         this.geotrackerAppVersion = geotrackerAppVersion;
     }
+
+	public Boolean getPhoneStatusEnabled() {
+		return phoneStatusEnabled;
+	}
+
+	public void setPhoneStatusEnabled(Boolean phoneStatusEnabled) {
+		this.phoneStatusEnabled = phoneStatusEnabled;
+	}
+
+	public Boolean getLocationPermissionGranted() {
+		return locationPermissionGranted;
+	}
+
+	public void setLocationPermissionGranted(Boolean locationPermissionGranted) {
+		this.locationPermissionGranted = locationPermissionGranted;
+	}
+
+	public Date getLocationGenerationTime() {
+		return locationGenerationTime;
+	}
+
+	public void setLocationGenerationTime(Date locationGenerationTime) {
+		this.locationGenerationTime = locationGenerationTime;
+	}
 }

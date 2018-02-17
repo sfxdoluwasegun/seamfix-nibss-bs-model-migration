@@ -8,52 +8,65 @@ import javax.persistence.Table;
 
 import com.sf.biocapture.entity.Node;
 import com.sf.biocapture.entity.enums.VersionType;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 
 import nw.orm.core.IEntity;
 
 /**
- * 
+ *
  * @author Nnanna
- * @since v1.5.37 
+ * @since v1.5.37
  *
  */
 @Entity
 @Table(name = "VERSION_LOG")
 public class VersionLog extends IEntity {
 
-	private static final long serialVersionUID = 3733222892765503526L;
-	
-	@ManyToOne(optional = false)
-	@JoinColumn(name = "NODE_FK", nullable = false)
-	private Node node;
-	
-	@Column(name = "TYPE_", nullable = false)
-	private VersionType type;
+    private static final long serialVersionUID = 3733222892765503526L;
 
-	@Column(name = "VERSION_", nullable = false)
-	private String version;
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "NODE_FK", nullable = false)
+    private Node node;
 
-	public Node getNode() {
-		return node;
-	}
+    @Column(name = "TYPE_", nullable = true)
+    private VersionType type;
 
-	public void setNode(Node node) {
-		this.node = node;
-	}
+    @Column(name = "VERSION_TYPE", nullable = true)
+    private String versionType;
 
-	public VersionType getType() {
-		return type;
-	}
+    @Column(name = "VERSION_", nullable = false)
+    private String version;
 
-	public void setType(VersionType type) {
-		this.type = type;
-	}
+    public Node getNode() {
+        return node;
+    }
 
-	public String getVersion() {
-		return version;
-	}
+    public void setNode(Node node) {
+        this.node = node;
+    }
 
-	public void setVersion(String version) {
-		this.version = version;
-	}
+    public VersionType getVersionType() {
+        return versionType == null ? null : VersionType.valueOf(versionType);
+    }
+
+    public void setVersionType(VersionType versionType) {
+        this.versionType = versionType == null ? null : versionType.name();
+    }
+
+    public VersionType getType() {
+        return type;
+    }
+
+    public void setType(VersionType type) {
+        this.type = type;
+    }
+
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
+    }
 }

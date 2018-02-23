@@ -23,7 +23,7 @@ public class ClientChannel extends IEntity{
     
 	private static final long serialVersionUID = 1L;
 	
-	@Column(name="name",nullable = false, unique = true)
+	@Column(name="name_",nullable = false, unique = true)
     private String name;
     
 	@Column(name="description")

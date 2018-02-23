@@ -8,6 +8,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.Table;
 
 import com.sf.biocapture.entity.enums.ClientChannelTypeEnum;
+import com.sf.biocapture.entity.enums.KycPrivilege;
 
 import nw.orm.core.IEntity;
 
@@ -25,15 +26,14 @@ public class ClientChannel extends IEntity{
 	@Column(name="name",nullable = false, unique = true)
     private String name;
     
-	@Column(name="description",nullable = false)
+	@Column(name="description")
     private String description;
 
 	@Column(name="token",nullable = false)
 	private String token;
     
-    @Enumerated(EnumType.STRING)
-    @Column(name = "client_channel_type_enum", nullable = true) 
-    private ClientChannelTypeEnum clientChannelTypeEnum;
+    @Column(name = "client_channel_type_enum", nullable = false)
+    private String clientChannelTypeEnum;
     
     public ClientChannel() {       
     }
@@ -63,11 +63,11 @@ public class ClientChannel extends IEntity{
 	}
 
 	public ClientChannelTypeEnum getClientChannelTypeEnum() {
-		return clientChannelTypeEnum;
+		return clientChannelTypeEnum == null ? null : ClientChannelTypeEnum.valueOf(clientChannelTypeEnum);
 	}
 
 	public void setClientChannelTypeEnum(ClientChannelTypeEnum clientChannelTypeEnum) {
-		this.clientChannelTypeEnum = clientChannelTypeEnum;
+		this.clientChannelTypeEnum = clientChannelTypeEnum == null ? null : clientChannelTypeEnum.name();
 	}
     
 }

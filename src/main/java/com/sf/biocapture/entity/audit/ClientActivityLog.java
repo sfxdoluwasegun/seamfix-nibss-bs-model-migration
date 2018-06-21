@@ -5,13 +5,14 @@
  */
 package com.sf.biocapture.entity.audit;
 
-import java.sql.Timestamp;
 import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
 import nw.orm.core.IEntity;
 
 /**
@@ -51,6 +52,8 @@ public class ClientActivityLog extends IEntity {
     private String refDeviceId;
     @Column(name = "REALTIME_DEVICE_ID")
     private String realTimeDeviceId;
+    @Column(name = "APP_VERSION")
+    private Float appVersion;
     
     public String getMacAddress() {
         return macAddress;
@@ -147,5 +150,13 @@ public class ClientActivityLog extends IEntity {
     public void setRealTimeDeviceId(String realTimeDeviceId) {
         this.realTimeDeviceId = realTimeDeviceId;
     }
+
+	public Float getAppVersion() {
+		return appVersion;
+	}
+
+	public void setAppVersion(Float appVersion) {
+		this.appVersion = appVersion;
+	}
 
 }

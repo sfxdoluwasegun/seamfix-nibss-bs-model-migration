@@ -132,6 +132,7 @@ public class HeartbeatStatus extends IEntity {
     @Column(name = "LOCATION_PERMISSION_GRANTED")
     private Boolean locationPermissionGranted;
     
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "LOCATION_GENERATION_TIME")
     private Date locationGenerationTime;
     

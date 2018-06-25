@@ -3,12 +3,9 @@ package com.sf.biocapture.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.Table;
 
 import com.sf.biocapture.entity.enums.ClientChannelTypeEnum;
-import com.sf.biocapture.entity.enums.KycPrivilege;
 
 import nw.orm.core.IEntity;
 

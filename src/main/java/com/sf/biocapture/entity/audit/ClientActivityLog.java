@@ -54,6 +54,16 @@ public class ClientActivityLog extends IEntity {
     private String realTimeDeviceId;
     @Column(name = "APP_VERSION")
     private Float appVersion;
+    @Column(name = "FAILURE_REASON")
+    private String failureReason;
+    @Column(name = "FAILURE_COUNT")
+    private Integer failureCount;
+    @Column(name = "SYNC_FILE_STATUS")
+    private String syncFileStatus;
+    @Column(name = "SYNC_TRANSFER_MODE")
+    private String syncTransferMode;
+    @Column(name = "NETWORK_STRENGTH")
+    private String networkStrength;
     
     public String getMacAddress() {
         return macAddress;
@@ -157,6 +167,46 @@ public class ClientActivityLog extends IEntity {
 
 	public void setAppVersion(Float appVersion) {
 		this.appVersion = appVersion;
+	}
+
+	public String getFailureReason() {
+		return failureReason;
+	}
+
+	public Integer getFailureCount() {
+		return failureCount;
+	}
+
+	public String getSyncFileStatus() {
+		return syncFileStatus;
+	}
+
+	public String getSyncTransferMode() {
+		return syncTransferMode;
+	}
+
+	public String getNetworkStrength() {
+		return networkStrength;
+	}
+
+	public void setFailureReason(String failureReason) {
+		this.failureReason = failureReason;
+	}
+
+	public void setFailureCount(Integer failureCount) {
+		this.failureCount = failureCount;
+	}
+
+	public void setSyncFileStatus(String syncFileStatus) {
+		this.syncFileStatus = syncFileStatus;
+	}
+
+	public void setSyncTransferMode(String syncTransferMode) {
+		this.syncTransferMode = syncTransferMode;
+	}
+
+	public void setNetworkStrength(String networkStrength) {
+		this.networkStrength = networkStrength;
 	}
 
 }

@@ -7,6 +7,11 @@
     <name>KYC Services Model</name>
     <dependencies>
         <dependency>
+            <groupId>com.seamfix.kyc</groupId>
+            <artifactId>base-model</artifactId>
+            <version>2.4.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
             <groupId>com.seamfix.model</groupId>
             <artifactId>km-model</artifactId>
             <version>1.7.4-FINAL</version>

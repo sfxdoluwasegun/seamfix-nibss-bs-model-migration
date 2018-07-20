@@ -154,7 +154,7 @@ public class HeartBeat extends BaseEntity {
     private String livenessThresholdVersion;
     
     @Column(name = "CLIENT_TIMESTAMP")
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date clientTime;
 
 

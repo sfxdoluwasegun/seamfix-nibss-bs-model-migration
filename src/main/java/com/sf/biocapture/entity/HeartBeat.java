@@ -147,12 +147,35 @@ public class HeartBeat extends BaseEntity {
     
     @Column(name = "LOCATION_GENERATION_TIME")
     private Date locationGenerationTime;
+    
+    @Column(name = "LIVENESS_THRESHOLD_VERSION")
+    private String livenessThresholdVersion;
+    
+    @Column(name = "CLIENT_TIMESTAMP")
+    private Timestamp clientTimestamp;
+
 
     public HeartBeat() {
 
     }
 
-    public String getAppVersion() {
+    public String getLivenessThresholdVersion() {
+		return livenessThresholdVersion;
+	}
+
+	public void setLivenessThresholdVersion(String livenessThresholdVersion) {
+		this.livenessThresholdVersion = livenessThresholdVersion;
+	}
+
+	public Timestamp getClientTimestamp() {
+		return clientTimestamp;
+	}
+
+	public void setClientTimestamp(Timestamp clientTimestamp) {
+		this.clientTimestamp = clientTimestamp;
+	}
+
+	public String getAppVersion() {
         return appVersion;
     }
 

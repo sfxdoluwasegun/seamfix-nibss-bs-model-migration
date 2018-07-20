@@ -162,7 +162,15 @@ public class HeartBeat extends BaseEntity {
 
     }
 
-    public String getLivenessThresholdVersion() {
+    public Date getClientTime() {
+		return clientTime;
+	}
+
+	public void setClientTime(Date clientTime) {
+		this.clientTime = clientTime;
+	}
+
+	public String getLivenessThresholdVersion() {
 		return livenessThresholdVersion;
 	}
 

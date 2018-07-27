@@ -7,6 +7,8 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import com.sf.biocapture.entity.base.BaseEntity;
 
@@ -147,12 +149,36 @@ public class HeartBeat extends BaseEntity {
     
     @Column(name = "LOCATION_GENERATION_TIME")
     private Date locationGenerationTime;
+    
+    @Column(name = "LIVENESS_THRESHOLD_VERSION")
+    private String livenessThresholdVersion;
+    
+    @Column(name = "CLIENT_TIMESTAMP")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date clientTime;
+
 
     public HeartBeat() {
 
     }
 
-    public String getAppVersion() {
+    public Date getClientTime() {
+		return clientTime;
+	}
+
+	public void setClientTime(Date clientTime) {
+		this.clientTime = clientTime;
+	}
+
+	public String getLivenessThresholdVersion() {
+		return livenessThresholdVersion;
+	}
+
+	public void setLivenessThresholdVersion(String livenessThresholdVersion) {
+		this.livenessThresholdVersion = livenessThresholdVersion;
+	}
+
+	public String getAppVersion() {
         return appVersion;
     }
 

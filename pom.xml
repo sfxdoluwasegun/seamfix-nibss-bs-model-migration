@@ -24,6 +24,18 @@
             <optional>true</optional>
         </dependency>
     </dependencies>
+    <repositories>
+        <repository>
+            <id>nexus</id>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <url>http://singlewindow.seamfix.com:7997/nexus/content/groups/public</url>
+        </repository>
+    </repositories>
     <distributionManagement>
         <repository>
             <id>deployment</id>

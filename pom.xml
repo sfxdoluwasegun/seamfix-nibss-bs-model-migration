@@ -15,6 +15,13 @@
             <groupId>com.seamfix.model</groupId>
             <artifactId>km-model</artifactId>
             <version>1.8.0-FINAL</version>
+            <!-- Excluding bs-model to prevent any issues from cyclic dependencies -->
+            <exclusions>
+                <exclusion>
+                    <groupId>com.seamfix.model</groupId>
+                    <artifactId>bfp-model</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.hibernate</groupId>

@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.seamfix.model</groupId>
     <artifactId>bs-model</artifactId>
-    <version>1.5.0-SNAPSHOT</version>
+    <version>1.4.10-FINAL</version>
     <name>KYC Services Model</name>
     <dependencies>
         <dependency>
@@ -14,7 +14,7 @@
         <dependency>
             <groupId>com.seamfix.model</groupId>
             <artifactId>km-model</artifactId>
-            <version>1.7.4-FINAL</version>
+            <version>1.8.0-FINAL</version>
         </dependency>
         <dependency>
             <groupId>org.hibernate</groupId>

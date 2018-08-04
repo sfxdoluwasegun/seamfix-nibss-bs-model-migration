@@ -149,10 +149,10 @@ public class HeartBeat extends BaseEntity {
     
     @Column(name = "LOCATION_GENERATION_TIME")
     private Date locationGenerationTime;
-    
+
     @Column(name = "LIVENESS_THRESHOLD_VERSION")
     private String livenessThresholdVersion;
-    
+
     @Column(name = "CLIENT_TIMESTAMP")
     @Temporal(TemporalType.TIMESTAMP)
     private Date clientTime;

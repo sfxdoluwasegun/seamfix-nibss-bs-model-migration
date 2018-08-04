@@ -5,6 +5,7 @@
  */
 package com.sf.biocapture.entity.audit;
 
+import java.sql.Timestamp;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -64,7 +65,9 @@ public class ClientActivityLog extends IEntity {
     private String syncTransferMode;
     @Column(name = "NETWORK_STRENGTH")
     private String networkStrength;
-    
+    @Column(name = "SYNC_FILE_NAME")
+    private String syncFileName;
+
     public String getMacAddress() {
         return macAddress;
     }
@@ -207,6 +210,14 @@ public class ClientActivityLog extends IEntity {
 
 	public void setNetworkStrength(String networkStrength) {
 		this.networkStrength = networkStrength;
+	}
+
+	public String getSyncFileName() {
+		return syncFileName;
+	}
+
+	public void setSyncFileName(String syncFileName) {
+		this.syncFileName = syncFileName;
 	}
 
 }

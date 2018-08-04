@@ -9,7 +9,7 @@
         <dependency>
             <groupId>com.seamfix.model</groupId>
             <artifactId>km-model</artifactId>
-            <version>1.7.4-FINAL</version>
+            <version>1.8.0-FINAL</version>
         </dependency>
     </dependencies>
     <distributionManagement>

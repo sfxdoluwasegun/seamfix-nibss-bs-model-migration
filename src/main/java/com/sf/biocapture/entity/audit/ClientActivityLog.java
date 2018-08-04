@@ -5,12 +5,15 @@
  */
 package com.sf.biocapture.entity.audit;
 
+import java.sql.Timestamp;
 import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
 import nw.orm.core.IEntity;
 
 /**
@@ -64,7 +67,7 @@ public class ClientActivityLog extends IEntity {
     private String networkStrength;
     @Column(name = "SYNC_FILE_NAME")
     private String syncFileName;
-    
+
     public String getMacAddress() {
         return macAddress;
     }

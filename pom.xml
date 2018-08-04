@@ -7,11 +7,35 @@
     <name>KYC Services Model</name>
     <dependencies>
         <dependency>
+            <groupId>com.seamfix.kyc</groupId>
+            <artifactId>base-model</artifactId>
+            <version>2.4.0-FINAL</version>
+        </dependency>
+        <dependency>
             <groupId>com.seamfix.model</groupId>
             <artifactId>km-model</artifactId>
             <version>1.8.0-FINAL</version>
         </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-jpamodelgen</artifactId>
+            <version>5.2.17.Final</version>
+            <scope>compile</scope>
+            <optional>true</optional>
+        </dependency>
     </dependencies>
+    <repositories>
+        <repository>
+            <id>nexus</id>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <url>http://singlewindow.seamfix.com:7997/nexus/content/groups/public</url>
+        </repository>
+    </repositories>
     <distributionManagement>
         <repository>
             <id>deployment</id>

@@ -33,7 +33,13 @@ public class EnrollmentRefKmUserMapper extends IEntity {
 	 * boolean indicating it is the last logged in device
 	 */
 	@Column(name = "LAST_LOGGED_IN", nullable = false)
-	private boolean lastLoggedIn;
+	private boolean lastLoggedIn = false;
+
+	/**
+	 * boolean indicating it is the last logged in device
+	 */
+	@Column(name = "DIRECTLY_MAPPED", nullable = false)
+	private boolean directlyMapped = false;
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "ENROLLMENT_REF_FK", nullable = false)

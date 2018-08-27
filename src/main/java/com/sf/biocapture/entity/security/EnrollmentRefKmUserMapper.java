@@ -2,13 +2,8 @@ package com.sf.biocapture.entity.security;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
-
-import com.sf.biocapture.entity.EnrollmentRef;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -41,12 +36,10 @@ public class EnrollmentRefKmUserMapper extends IEntity {
 	@Column(name = "DIRECTLY_MAPPED", nullable = false)
 	private boolean directlyMapped = false;
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "ENROLLMENT_REF_FK", nullable = false)
-	private EnrollmentRef enrollmentRef;
+	@Column(name = "ENROLLMENT_REF_FK", nullable = false)
+	private Long enrollmentRefId;
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "KM_USER_FK", nullable = false)
-	KMUser kmUser;
+	@Column(name = "KM_USER_FK", nullable = false)
+	private Long kmUserPk;
 
 }

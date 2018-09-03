@@ -14,7 +14,7 @@
         <dependency>
             <groupId>com.seamfix.model</groupId>
             <artifactId>km-model</artifactId>
-            <version>1.8.0-FINAL</version>
+            <version>1.9.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.hibernate</groupId>

@@ -23,7 +23,7 @@ public class BiometricUpdateLog extends IEntity  {
 	 */
 	private static final long serialVersionUID = -2667857449038500981L;
 
-	@Column(name = "UNIQUE_ID", nullable = false)
+	@Column(name = "UNIQUE_ID")
 	private String uniqueId;
 	
 	@Column(name = "MSISDN", nullable = false)
@@ -33,7 +33,7 @@ public class BiometricUpdateLog extends IEntity  {
 	private String kitTag;
 	
 	@Column(name = "AGL_PLATINUM_CODE")
-	private String agkPlatinumCode;
+	private String aglPlatinumCode;
 	
 	@Column(name = "AGL_MNP_CODE")
 	private String aglMnpCode;

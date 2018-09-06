@@ -32,6 +32,9 @@ public class BiometricUpdateLog extends IEntity  {
 	@Column(name = "KIT_TAG")
 	private String kitTag;
 	
+	@Column(name = "DEVICE_ID")
+	private String deviceId;
+	
 	@Column(name = "AGL_PLATINUM_CODE")
 	private String aglPlatinumCode;
 	

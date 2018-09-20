@@ -156,7 +156,15 @@ public class HeartBeat extends BaseEntity {
     @Column(name = "CLIENT_TIMESTAMP")
     @Temporal(TemporalType.TIMESTAMP)
     private Date clientTime;
-
+    
+    @Column(name = "PING_LATENCY")
+    private Long pingLatency;
+    
+    @Column(name = "SERVER_RESPONSE_TIME")
+    private Timestamp responseTime;
+    
+    @Column(name = "DISPLAY_INCORRECT_TIME")
+    private Boolean displayIncorrectTime;//current setting value for displayIncorrectTime setting 
 
     public HeartBeat() {
 
@@ -520,6 +528,22 @@ public class HeartBeat extends BaseEntity {
 
 	public void setLocationGenerationTime(Date locationGenerationTime) {
 		this.locationGenerationTime = locationGenerationTime;
+	}
+
+	public long getPingLatency() {
+		return pingLatency;
+	}
+
+	public void setPingLatency(long pingLatency) {
+		this.pingLatency = pingLatency;
+	}
+
+	public Timestamp getResponseTime() {
+		return responseTime;
+	}
+
+	public void setResponseTime(Timestamp responseTime) {
+		this.responseTime = responseTime;
 	}
 
 }

@@ -546,4 +546,12 @@ public class HeartBeat extends BaseEntity {
 		this.responseTime = responseTime;
 	}
 
+	public Boolean getDisplayIncorrectTime() {
+		return displayIncorrectTime;
+	}
+
+	public void setDisplayIncorrectTime(Boolean displayIncorrectTime) {
+		this.displayIncorrectTime = displayIncorrectTime;
+	}
+
 }

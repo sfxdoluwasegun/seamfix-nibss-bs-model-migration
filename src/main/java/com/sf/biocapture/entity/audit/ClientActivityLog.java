@@ -67,6 +67,8 @@ public class ClientActivityLog extends IEntity {
     private String networkStrength;
     @Column(name = "SYNC_FILE_NAME")
     private String syncFileName;
+    @Column(name = "NETWORK_TYPE")
+    private String networkType;
 
     public String getMacAddress() {
         return macAddress;
@@ -219,5 +221,15 @@ public class ClientActivityLog extends IEntity {
 	public void setSyncFileName(String syncFileName) {
 		this.syncFileName = syncFileName;
 	}
+
+        public String getNetworkType() {
+            return networkType;
+        }
+
+        public void setNetworkType(String networkType) {
+            this.networkType = networkType;
+        }
+        
+        
 
 }

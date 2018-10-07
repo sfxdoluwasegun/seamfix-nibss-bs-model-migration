@@ -35,7 +35,7 @@ public class FMLicenseRequest extends IEntity {
     @Column(name = "KIT_TAG", nullable = false)
     private String kitTag;
 
-    @Column(name = "MAC_ADDRESS", nullable = false)
+    @Column(name = "MAC_ADDRESS")
     private String macAddress;
 
     @Column(name = "AGENT_NAME")

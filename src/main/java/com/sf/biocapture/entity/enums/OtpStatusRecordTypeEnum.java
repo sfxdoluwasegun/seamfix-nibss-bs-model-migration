@@ -18,7 +18,8 @@ public enum OtpStatusRecordTypeEnum {
     ONLINE_REGISTRATION_TOKEN("Online Registration Token"),
     SELF_SERVICE_TOKEN(" Service Registration Token"),
     VTU_AGENT_VALIDATION("VTU Agent Validation"),
-    FORGOT_PASSWORD("Forgot Password");
+    FORGOT_PASSWORD("Forgot Password"),
+    MSISDN_REACTIVATION("Msisdn Reactivation");
 
     private OtpStatusRecordTypeEnum(String displayName) {
         this.displayName = displayName;

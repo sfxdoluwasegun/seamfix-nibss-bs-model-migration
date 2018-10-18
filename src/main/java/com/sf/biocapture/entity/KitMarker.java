@@ -48,6 +48,6 @@ public class KitMarker extends BaseEntity {
 	KMUser addedBy;
 
 	@Column(name = "APP_VERSION")
-	String appVersion;
+	Float appVersion;
 
 }

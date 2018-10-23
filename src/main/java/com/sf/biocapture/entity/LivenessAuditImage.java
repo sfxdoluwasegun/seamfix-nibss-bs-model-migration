@@ -6,6 +6,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Lob;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -24,6 +26,7 @@ public class LivenessAuditImage extends IEntity {
 	 */
 	private static final long serialVersionUID = 68269570707922402L;
 
+	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "CAPTURE_TIME", updatable = false, nullable = false)
 	private Date captureTime;
 	

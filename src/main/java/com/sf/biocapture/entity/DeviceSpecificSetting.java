@@ -7,6 +7,7 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -26,7 +27,7 @@ public class DeviceSpecificSetting extends BaseEntity implements Serializable {
 	 */
 	private static final long serialVersionUID = 7414203967232806629L;
 
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "ENROLLMENT_REF", nullable = false)
     private EnrollmentRef enrollmentRef;
 	
@@ -36,9 +37,6 @@ public class DeviceSpecificSetting extends BaseEntity implements Serializable {
 	@Column(name = "SETTING_VALUE")
 	private String settingValue;
 	
-	@Column(name = "GLOBAL", nullable = true)
-	private Boolean global;
-
 	public EnrollmentRef getEnrollmentRef() {
 		return enrollmentRef;
 	}
@@ -63,11 +61,4 @@ public class DeviceSpecificSetting extends BaseEntity implements Serializable {
 		this.settingValue = settingValue;
 	}
 
-		public Boolean getGlobal() {
-		return global;
-	}
-
-	public void setGlobal(Boolean global) {
-		this.global = global;
-	}
 }

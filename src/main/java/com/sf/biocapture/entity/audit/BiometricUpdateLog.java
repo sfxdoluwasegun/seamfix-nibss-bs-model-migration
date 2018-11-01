@@ -43,6 +43,9 @@ public class BiometricUpdateLog extends IEntity  {
 	
 	@Column(name = "AGL_POSTPAID_CODE")
 	private String aglPostpaidCode;
+
+	@Column(name = "AGL_SWAP_FLAG")
+	private String aglSwapFlag;
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "REQUEST_TIME")

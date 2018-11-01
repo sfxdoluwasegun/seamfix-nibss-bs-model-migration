@@ -17,7 +17,7 @@ public class KitSyncMode extends BaseEntity {
 	private String deviceId;
 	@Column(name="SYNC_MODE")
 	private String syncMode;
-	
+
 	public String getDeviceId() {
 		return deviceId;
 	}
@@ -30,5 +30,5 @@ public class KitSyncMode extends BaseEntity {
 	public void setSyncMode(String syncMode) {
 		this.syncMode = syncMode;
 	}
-	
+
 }

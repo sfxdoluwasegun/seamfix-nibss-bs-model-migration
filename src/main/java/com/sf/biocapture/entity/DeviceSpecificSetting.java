@@ -13,8 +13,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
-import com.sf.biocapture.entity.base.BaseEntity;
-
 import nw.orm.core.IEntity;
 
 

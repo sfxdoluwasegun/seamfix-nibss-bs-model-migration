@@ -20,7 +20,7 @@ import nw.orm.core.IEntity;
 
 @Entity
 @Table(name = "DEVICE_SPECIFIC_SETTING",  uniqueConstraints=
-@UniqueConstraint(columnNames={"ENROLLMENT_REF", "SETTING_NAME"}))
+@UniqueConstraint(columnNames={"ENROLLMENT_REF_FK", "SETTING_NAME"}))
 public class DeviceSpecificSetting extends IEntity implements Serializable {
 
 	
@@ -30,7 +30,7 @@ public class DeviceSpecificSetting extends IEntity implements Serializable {
 	private static final long serialVersionUID = 7414203967232806629L;
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "ENROLLMENT_REF", nullable = false)
+	@JoinColumn(name = "ENROLLMENT_REF_FK", nullable = false)
     private EnrollmentRef enrollmentRef;
 	
 	@Column(name = "SETTING_NAME", nullable = false)

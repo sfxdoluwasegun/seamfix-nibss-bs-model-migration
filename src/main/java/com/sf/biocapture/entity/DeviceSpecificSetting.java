@@ -15,11 +15,13 @@ import javax.persistence.UniqueConstraint;
 
 import com.sf.biocapture.entity.base.BaseEntity;
 
+import nw.orm.core.IEntity;
+
 
 @Entity
 @Table(name = "DEVICE_SPECIFIC_SETTING",  uniqueConstraints=
 @UniqueConstraint(columnNames={"ENROLLMENT_REF", "SETTING_NAME"}))
-public class DeviceSpecificSetting extends BaseEntity implements Serializable {
+public class DeviceSpecificSetting extends IEntity implements Serializable {
 
 	
 	/**

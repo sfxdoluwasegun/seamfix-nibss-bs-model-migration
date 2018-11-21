@@ -4,19 +4,13 @@ charles
 package com.sf.biocapture.entity.audit;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
-import java.sql.Timestamp;
 import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.PrePersist;
-import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-
-import com.sf.biocapture.entity.base.BaseEntity;
 
 import nw.orm.core.IEntity;
 

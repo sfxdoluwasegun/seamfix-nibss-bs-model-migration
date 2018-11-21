@@ -18,9 +18,11 @@ import javax.persistence.TemporalType;
 
 import com.sf.biocapture.entity.base.BaseEntity;
 
+import nw.orm.core.IEntity;
+
 @Entity
 @Table(name = "AGILITY_PUSH_STATUS")
-public class AgilityPushStatus extends BaseEntity implements Serializable {
+public class AgilityPushStatus extends IEntity implements Serializable {
 	
 	/**
 	 * 
@@ -35,14 +37,6 @@ public class AgilityPushStatus extends BaseEntity implements Serializable {
 	
 	@Column(name = "RESP_CODE")
 	private String responseCode;
-	
-	@Column(name = "CREATE_DATE", nullable = false, insertable = true, updatable = false)
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date createDate = new Date();
-
-	@Column(name = "LAST_MODIFIED", nullable = true, insertable = true, updatable = true)
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date lastModified;
 	
 	@Column(name = "RESPONSE_TIME", nullable = true, insertable = true, updatable = true)
 	@Temporal(TemporalType.TIMESTAMP)
@@ -73,19 +67,6 @@ public class AgilityPushStatus extends BaseEntity implements Serializable {
 		this.responseCode = responseCode;
 	}
 	
-	public Date getCreateDate() {
-		return createDate;
-	}
-	public void setCreateDate(Date createDate) {
-		this.createDate = createDate;
-	}
-	public Date getLastModified() {
-		return lastModified;
-	}
-	public void setLastModified(Date lastModified) {
-		this.lastModified = lastModified;
-	}
-	
 	public Date getResponseTime() {
 		return responseTime;
 	}
@@ -104,16 +85,4 @@ public class AgilityPushStatus extends BaseEntity implements Serializable {
 	public void setMsisdn(String msisdn) {
 		this.msisdn = msisdn;
 	}
-	@PrePersist
-	protected void onCreate() {
-		
-		this.createDate = new Timestamp(new Date().getTime());
-		this.lastModified = this.createDate;
-	}
-
-	@PreUpdate
-	protected void onUpdate() {
-		this.lastModified = new Timestamp(new Date().getTime());
-	}
-
 }

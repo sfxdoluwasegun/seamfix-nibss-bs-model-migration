@@ -19,7 +19,7 @@ import javax.persistence.TemporalType;
 import com.sf.biocapture.entity.base.BaseEntity;
 
 @Entity
-@Table(name = "AGILTIY_PUSH_STATUS")
+@Table(name = "AGILITY_PUSH_STATUS")
 public class AgilityPushStatus extends BaseEntity implements Serializable {
 	
 	/**

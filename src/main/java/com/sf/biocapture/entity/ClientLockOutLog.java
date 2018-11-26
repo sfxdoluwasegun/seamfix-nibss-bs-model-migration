@@ -4,7 +4,6 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import com.sf.biocapture.entity.security.KMUser;
@@ -29,8 +28,8 @@ public class ClientLockOutLog extends IEntity {
 	@JoinColumn(name = "KM_USER_FK", nullable = false)
 	private KMUser user;
 	
-	@OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "ENROLLMENT_REF", nullable = true)
+	@ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "ENROLLMENT_REF_FK", nullable = true)
     private EnrollmentRef enrollmentRef;
 
 }

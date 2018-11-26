@@ -26,7 +26,7 @@ public class ClientLockOutLog extends IEntity {
 	private static final long serialVersionUID = -2333282062991479314L;
 
 	@ManyToOne(optional = false)
-	@JoinColumn(name = "USER_FK", nullable = false)
+	@JoinColumn(name = "KM_USER_FK", nullable = false)
 	private KMUser user;
 	
 	@OneToOne(fetch = FetchType.LAZY)

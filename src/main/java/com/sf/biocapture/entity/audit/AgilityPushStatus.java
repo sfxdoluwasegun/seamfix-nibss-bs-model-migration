@@ -47,6 +47,9 @@ public class AgilityPushStatus extends IEntity implements Serializable {
 	
 	@Column(name = "ERROR_MESSAGE", nullable = true)
 	private String errorMessage;
+	
+	@Column(name = "SYNC_FILE_NAME", nullable = true)
+	private String syncFileName;
 
 	public String getStatus() {
 		return status;
@@ -96,5 +99,11 @@ public class AgilityPushStatus extends IEntity implements Serializable {
 	}
 	public void setErrorMessage(String errorMessage) {
 		this.errorMessage = errorMessage;
+	}
+	public String getSyncFileName() {
+		return syncFileName;
+	}
+	public void setSyncFileName(String syncFileName) {
+		this.syncFileName = syncFileName;
 	}
 }

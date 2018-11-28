@@ -36,11 +36,17 @@ public class AgilityPushStatus extends IEntity implements Serializable {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date responseTime;
 	
-	@Column(name = "BASIC_DATA_FK", nullable = false)
+	@Column(name = "BASIC_DATA_FK", nullable = true)
 	private Long basicDatafk;
 	
 	@Column(name = "MSISDN", nullable = false)
 	private String msisdn;
+	
+	@Column(name = "HAS_ERROR", nullable = false)
+	private Boolean hasError = false;
+	
+	@Column(name = "ERROR_MESSAGE", nullable = true)
+	private String errorMessage;
 
 	public String getStatus() {
 		return status;
@@ -78,5 +84,17 @@ public class AgilityPushStatus extends IEntity implements Serializable {
 	}
 	public void setMsisdn(String msisdn) {
 		this.msisdn = msisdn;
+	}
+	public Boolean getHasError() {
+		return hasError;
+	}
+	public void setHasError(Boolean hasError) {
+		this.hasError = hasError;
+	}
+	public String getErrorMessage() {
+		return errorMessage;
+	}
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 }

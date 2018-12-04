@@ -43,7 +43,7 @@ public class AgilityPushStatus extends IEntity implements Serializable {
 	@Column(name = "BASIC_DATA_FK", nullable = true)
 	private Long basicDatafk;
 	
-	@Column(name = "MSISDN", nullable = false)
+	@Column(name = "MSISDN", nullable = true)
 	private String msisdn;
 	
 	@Column(name = "ERROR_CATEGORY")

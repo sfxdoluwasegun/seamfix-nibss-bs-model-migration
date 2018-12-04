@@ -12,8 +12,12 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import lombok.Getter;
+import lombok.Setter;
 import nw.orm.core.IEntity;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "AGILITY_PUSH_STATUS")
 public class AgilityPushStatus extends IEntity implements Serializable {
@@ -42,8 +46,8 @@ public class AgilityPushStatus extends IEntity implements Serializable {
 	@Column(name = "MSISDN", nullable = false)
 	private String msisdn;
 	
-	@Column(name = "HAS_ERROR", nullable = false)
-	private Boolean hasError = false;
+	@Column(name = "ERROR_CATEGORY")
+	private String errorCategory;
 	
 	@Column(name = "ERROR_MESSAGE", nullable = true)
 	private String errorMessage;
@@ -51,59 +55,4 @@ public class AgilityPushStatus extends IEntity implements Serializable {
 	@Column(name = "SYNC_FILE_NAME", nullable = true)
 	private String syncFileName;
 
-	public String getStatus() {
-		return status;
-	}
-	public void setStatus(String status) {
-		this.status = status;
-	}
-	public String getResponseDescription() {
-		return responseDescription;
-	}
-	public void setResponseDescription(String responseDescription) {
-		this.responseDescription = responseDescription;
-	}
-	public String getResponseCode() {
-		return responseCode;
-	}
-	public void setResponseCode(String responseCode) {
-		this.responseCode = responseCode;
-	}
-	
-	public Date getResponseTime() {
-		return responseTime;
-	}
-	public void setResponseTime(Date responseTime) {
-		this.responseTime = responseTime;
-	}
-	public Long getBasicDatafk() {
-		return basicDatafk;
-	}
-	public void setBasicDatafk(Long basicDatafk) {
-		this.basicDatafk = basicDatafk;
-	}
-	public String getMsisdn() {
-		return msisdn;
-	}
-	public void setMsisdn(String msisdn) {
-		this.msisdn = msisdn;
-	}
-	public Boolean getHasError() {
-		return hasError;
-	}
-	public void setHasError(Boolean hasError) {
-		this.hasError = hasError;
-	}
-	public String getErrorMessage() {
-		return errorMessage;
-	}
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-	public String getSyncFileName() {
-		return syncFileName;
-	}
-	public void setSyncFileName(String syncFileName) {
-		this.syncFileName = syncFileName;
-	}
 }

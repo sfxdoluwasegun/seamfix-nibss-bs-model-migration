@@ -36,23 +36,26 @@ public class AgilityPushStatus extends IEntity implements Serializable {
 	@Column(name = "RESP_CODE")
 	private String responseCode;
 	
-	@Column(name = "RESPONSE_TIME", nullable = true, insertable = true, updatable = true)
+	@Column(name = "RESPONSE_TIME", insertable = true, updatable = true)
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date responseTime;
 	
-	@Column(name = "BASIC_DATA_FK", nullable = true)
+	@Column(name = "BASIC_DATA_FK")
 	private Long basicDatafk;
 	
-	@Column(name = "MSISDN", nullable = true)
+	@Column(name = "MSISDN")
 	private String msisdn;
+	
+	@Column(name = "SERIAL")
+	private String serial;
 	
 	@Column(name = "ERROR_CATEGORY")
 	private String errorCategory;
 	
-	@Column(name = "ERROR_MESSAGE", nullable = true)
+	@Column(name = "ERROR_MESSAGE")
 	private String errorMessage;
 	
-	@Column(name = "SYNC_FILE_NAME", nullable = true)
+	@Column(name = "SYNC_FILE_NAME")
 	private String syncFileName;
 
 }

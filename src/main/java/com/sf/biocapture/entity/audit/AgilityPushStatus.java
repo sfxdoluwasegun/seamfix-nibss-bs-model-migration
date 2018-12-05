@@ -12,8 +12,12 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import lombok.Getter;
+import lombok.Setter;
 import nw.orm.core.IEntity;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "AGILITY_PUSH_STATUS")
 public class AgilityPushStatus extends IEntity implements Serializable {
@@ -32,51 +36,26 @@ public class AgilityPushStatus extends IEntity implements Serializable {
 	@Column(name = "RESP_CODE")
 	private String responseCode;
 	
-	@Column(name = "RESPONSE_TIME", nullable = true, insertable = true, updatable = true)
+	@Column(name = "RESPONSE_TIME", insertable = true, updatable = true)
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date responseTime;
 	
-	@Column(name = "BASIC_DATA_FK", nullable = false)
+	@Column(name = "BASIC_DATA_FK")
 	private Long basicDatafk;
 	
-	@Column(name = "MSISDN", nullable = false)
+	@Column(name = "MSISDN")
 	private String msisdn;
-
-	public String getStatus() {
-		return status;
-	}
-	public void setStatus(String status) {
-		this.status = status;
-	}
-	public String getResponseDescription() {
-		return responseDescription;
-	}
-	public void setResponseDescription(String responseDescription) {
-		this.responseDescription = responseDescription;
-	}
-	public String getResponseCode() {
-		return responseCode;
-	}
-	public void setResponseCode(String responseCode) {
-		this.responseCode = responseCode;
-	}
 	
-	public Date getResponseTime() {
-		return responseTime;
-	}
-	public void setResponseTime(Date responseTime) {
-		this.responseTime = responseTime;
-	}
-	public Long getBasicDatafk() {
-		return basicDatafk;
-	}
-	public void setBasicDatafk(Long basicDatafk) {
-		this.basicDatafk = basicDatafk;
-	}
-	public String getMsisdn() {
-		return msisdn;
-	}
-	public void setMsisdn(String msisdn) {
-		this.msisdn = msisdn;
-	}
+	@Column(name = "SERIAL")
+	private String serial;
+	
+	@Column(name = "ERROR_CATEGORY")
+	private String errorCategory;
+	
+	@Column(name = "ERROR_MESSAGE")
+	private String errorMessage;
+	
+	@Column(name = "SYNC_FILE_NAME")
+	private String syncFileName;
+
 }

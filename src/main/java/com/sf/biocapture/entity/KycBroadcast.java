@@ -41,6 +41,10 @@ public class KycBroadcast extends IEntity {
 	@ManyToOne(optional = true)
 	@JoinColumn(name = "USER_FK", nullable = true)
 	private KMUser targetUser;
+	
+	@ManyToOne(optional = true)
+	@JoinColumn(name = "CREATED_BY", nullable = true)
+	private KMUser createdBy;
 
 	public Node getTargetNode() {
 		return targetNode;
@@ -80,6 +84,14 @@ public class KycBroadcast extends IEntity {
 
 	public void setTargetUser(KMUser targetUser) {
 		this.targetUser = targetUser;
+	}
+	
+	public KMUser getCreatedBy() {
+		return createdBy;
+	}
+
+	public void setCreatedBy(KMUser createdBy) {
+		this.createdBy = createdBy;
 	}
 
 }

@@ -30,12 +30,6 @@ public class EnrollmentRefKmUserMapper extends IEntity {
 	@Column(name = "LAST_LOGGED_IN", nullable = false)
 	private boolean lastLoggedIn = false;
 
-	/**
-	 * boolean indicating it is the last logged in device
-	 */
-	@Column(name = "DIRECTLY_MAPPED", nullable = false)
-	private boolean directlyMapped = false;
-
 	@Column(name = "ENROLLMENT_REF_FK", nullable = false)
 	private Long enrollmentRefId;
 

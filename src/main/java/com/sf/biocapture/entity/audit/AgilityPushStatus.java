@@ -57,5 +57,8 @@ public class AgilityPushStatus extends IEntity implements Serializable {
 	
 	@Column(name = "SYNC_FILE_NAME")
 	private String syncFileName;
+	
+	@Column(name = "QUARANTINE_REASON")
+	private String quarantineReason;
 
 }

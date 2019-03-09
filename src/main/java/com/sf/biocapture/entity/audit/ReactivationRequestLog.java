@@ -44,6 +44,9 @@ public class ReactivationRequestLog extends IEntity implements Serializable{
 	@Column(name = "STATUS")
 	private String status;
 
+	@Column (name = "CAPTURE_MODE")
+	private String captureMode;
+
 	public String getMsisdn() {
 		return msisdn;
 	}
@@ -99,4 +102,8 @@ public class ReactivationRequestLog extends IEntity implements Serializable{
 	public void setStatus(String status) {
 		this.status = status;
 	}
+
+	public String getCaptureMode() { return captureMode; }
+
+	public void setCaptureMode(String captureMode) { this.captureMode = captureMode; }
 }

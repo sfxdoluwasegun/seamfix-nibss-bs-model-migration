@@ -1,8 +1,12 @@
 package com.sf.biocapture.entity.audit;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import nw.orm.core.IEntity;
 
@@ -32,6 +36,14 @@ public class AgilityIntegrationLog extends IEntity {
 
     @Column(name = "BACKUP_PATH")
     private String backupPath;
+    
+    @Column(name = "REQUEST_TIME")
+    @Temporal(TemporalType.TIMESTAMP) 
+    private Date requestTime;
+
+    @Column(name = "RESPONSE_TIME")
+    @Temporal(TemporalType.TIMESTAMP) 
+    private Date responseTime;
 
     public String getMsisdn() {
         return msisdn;
@@ -88,5 +100,21 @@ public class AgilityIntegrationLog extends IEntity {
     public void setBackupPath(String backupPath) {
         this.backupPath = backupPath;
     }
+
+	public Date getRequestTime() {
+		return requestTime;
+	}
+
+	public void setRequestTime(Date requestTime) {
+		this.requestTime = requestTime;
+	}
+
+	public Date getResponseTime() {
+		return responseTime;
+	}
+
+	public void setResponseTime(Date responseTime) {
+		this.responseTime = responseTime;
+	}
 
 }

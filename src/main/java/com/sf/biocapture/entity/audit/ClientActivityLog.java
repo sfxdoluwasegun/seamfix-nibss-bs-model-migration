@@ -13,6 +13,8 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.sf.biocapture.entity.enums.TerminationFlag;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -80,5 +82,17 @@ public class ClientActivityLog extends IEntity {
     private String pointOfTermination;
     @Column(name = "TERMINATION_FLAG")
     private String terminationFlag;
+    
+    public TerminationFlag getTerminationFlag() {
 
+        if (terminationFlag == null) {
+            return null;
+        }
+
+        return TerminationFlag.from(terminationFlag);
+    }
+    
+    public void setTerminationFlag(TerminationFlag terminationFlag) {
+    	this.terminationFlag = terminationFlag == null ? null : terminationFlag.getName();
+    }
 }

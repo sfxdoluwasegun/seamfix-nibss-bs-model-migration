@@ -14,18 +14,18 @@ public enum TerminationFlag {
 	NA("N/A"),
 	;
 	
-	private String name;
+	private String value;
 
-	private TerminationFlag(String name) {
-		this.name = name;
+	private TerminationFlag(String value) {
+		this.value = value;
 	}
 	
-	public static TerminationFlag from(String name) {
-		if(name == null) {
+	public static TerminationFlag from(String value) {
+		if(value == null) {
 			return null;
 		}
 		for(TerminationFlag termination : TerminationFlag.values()) {
-			if(termination.name().equals(name)) {
+			if(termination.getValue().equalsIgnoreCase(value)) {
 				return termination;
 			}
 		}

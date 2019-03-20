@@ -27,7 +27,6 @@ import nw.orm.core.IEntity;
  */
 @Getter
 @Setter
-@ToString
 @Entity
 @Table(name = "CLIENT_ACTIVITY_LOG")
 public class ClientActivityLog extends IEntity {

@@ -92,6 +92,6 @@ public class ClientActivityLog extends IEntity {
     }
     
     public void setTerminationFlag(TerminationFlag terminationFlag) {
-    	this.terminationFlag = terminationFlag == null ? null : terminationFlag.getValue();
+    	this.terminationFlag = terminationFlag == null ? null : terminationFlag.name();
     }
 }

@@ -9,23 +9,17 @@ import lombok.Getter;
  */
 @Getter
 public enum TerminationFlag {
-	Y("Y"),
-	N("N"),
-	NA("N/A"),
+	Y,
+	N,
+	NA,
 	;
-	
-	private String value;
-
-	private TerminationFlag(String value) {
-		this.value = value;
-	}
 	
 	public static TerminationFlag from(String value) {
 		if(value == null) {
 			return null;
 		}
 		for(TerminationFlag termination : TerminationFlag.values()) {
-			if(termination.getValue().equalsIgnoreCase(value)) {
+			if(termination.name().equalsIgnoreCase(value)) {
 				return termination;
 			}
 		}

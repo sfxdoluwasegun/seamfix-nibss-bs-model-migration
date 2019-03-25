@@ -81,6 +81,8 @@ public class ClientActivityLog extends IEntity {
     private String pointOfTermination;
     @Column(name = "TERMINATION_FLAG")
     private String terminationFlag;
+    @Column(name = "NETWORK_STATUS")
+    private String networkStatus;
     
     public TerminationFlag getTerminationFlag() {
 

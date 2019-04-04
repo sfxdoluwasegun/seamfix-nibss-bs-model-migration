@@ -17,7 +17,6 @@ import com.sf.biocapture.entity.enums.TerminationFlag;
 
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 import nw.orm.core.IEntity;
 
 /**
@@ -83,6 +82,10 @@ public class ClientActivityLog extends IEntity {
     private String terminationFlag;
     @Column(name = "NETWORK_STATUS")
     private String networkStatus;
+    @Column(name = "PHONE_NUMBER")
+    private String phoneNumber;
+    @Column(name = "SIM_SERIAL")
+    private String simSerial;
     
     public TerminationFlag getTerminationFlag() {
 

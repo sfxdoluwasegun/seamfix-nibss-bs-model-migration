@@ -86,6 +86,12 @@ public class ClientActivityLog extends IEntity {
     private String phoneNumber;
     @Column(name = "SIM_SERIAL")
     private String simSerial;
+    @Column(name = "INFO1")
+    private String info1;
+    @Column(name = "INFO2")
+    private String info2;
+    @Column(name = "INFO3")
+    private String info3;
     
     public TerminationFlag getTerminationFlag() {
 

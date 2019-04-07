@@ -92,6 +92,10 @@ public class ClientActivityLog extends IEntity {
     private String info2;
     @Column(name = "INFO3")
     private String info3;
+    @Column(name = "INFO4")
+    private String info4;
+    @Column(name = "INFO5")
+    private String info5;
     
     public TerminationFlag getTerminationFlag() {
 

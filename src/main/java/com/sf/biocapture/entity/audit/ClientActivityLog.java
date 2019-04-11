@@ -5,7 +5,6 @@
  */
 package com.sf.biocapture.entity.audit;
 
-import java.sql.Timestamp;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -14,6 +13,10 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.sf.biocapture.entity.enums.TerminationFlag;
+
+import lombok.Getter;
+import lombok.Setter;
 import nw.orm.core.IEntity;
 
 /**
@@ -21,6 +24,8 @@ import nw.orm.core.IEntity;
  * @author Marcel
  * @since Jun 28, 2016, 1:47:03 PM
  */
+@Getter
+@Setter
 @Entity
 @Table(name = "CLIENT_ACTIVITY_LOG")
 public class ClientActivityLog extends IEntity {
@@ -69,167 +74,39 @@ public class ClientActivityLog extends IEntity {
     private String syncFileName;
     @Column(name = "NETWORK_TYPE")
     private String networkType;
+    @Column(name = "EXTENSION_COUNT")
+    private Integer extensionCount;
+    @Column(name = "POINT_OF_TERMINATION")
+    private String pointOfTermination;
+    @Column(name = "TERMINATION_FLAG")
+    private String terminationFlag;
+    @Column(name = "NETWORK_STATUS")
+    private String networkStatus;
+    @Column(name = "PHONE_NUMBER")
+    private String phoneNumber;
+    @Column(name = "SIM_SERIAL")
+    private String simSerial;
+    @Column(name = "INFO1")
+    private String info1;
+    @Column(name = "INFO2")
+    private String info2;
+    @Column(name = "INFO3")
+    private String info3;
+    @Column(name = "INFO4")
+    private String info4;
+    @Column(name = "INFO5")
+    private String info5;
+    
+    public TerminationFlag getTerminationFlag() {
 
-    public String getMacAddress() {
-        return macAddress;
-    }
-
-    public void setMacAddress(String macAddress) {
-        this.macAddress = macAddress;
-    }
-
-    public String getKitTag() {
-        return kitTag;
-    }
-
-    public void setKitTag(String kitTag) {
-        this.kitTag = kitTag;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getFullName() {
-        return fullName;
-    }
-
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
-    }
-
-    public String getActivity() {
-        return activity;
-    }
-
-    public void setActivity(String activity) {
-        this.activity = activity;
-    }
-
-    public String getEnrollmentRef() {
-        return enrollmentRef;
-    }
-
-    public void setEnrollmentRef(String enrollmentRef) {
-        this.enrollmentRef = enrollmentRef;
-    }
-
-    public String getUniqueActivityCode() {
-        return uniqueActivityCode;
-    }
-
-    public void setUniqueActivityCode(String uniqueActivityCode) {
-        this.uniqueActivityCode = uniqueActivityCode;
-    }
-
-    public Date getActivityStartTime() {
-        return activityStartTime;
-    }
-
-    public void setActivityStartTime(Date activityStartTime) {
-        this.activityStartTime = activityStartTime;
-    }
-
-    public Date getActivityEndTime() {
-        return activityEndTime;
-    }
-
-    public void setActivityEndTime(Date activityEndTime) {
-        this.activityEndTime = activityEndTime;
-    }
-
-    public Long getDuration() {
-        return duration;
-    }
-
-    public void setDuration(Long duration) {
-        this.duration = duration;
-    }
-
-    public String getRefDeviceId() {
-        return refDeviceId;
-    }
-
-    public void setRefDeviceId(String refDeviceId) {
-        this.refDeviceId = refDeviceId;
-    }
-
-    public String getRealTimeDeviceId() {
-        return realTimeDeviceId;
-    }
-
-    public void setRealTimeDeviceId(String realTimeDeviceId) {
-        this.realTimeDeviceId = realTimeDeviceId;
-    }
-
-	public Float getAppVersion() {
-		return appVersion;
-	}
-
-	public void setAppVersion(Float appVersion) {
-		this.appVersion = appVersion;
-	}
-
-	public String getFailureReason() {
-		return failureReason;
-	}
-
-	public Integer getFailureCount() {
-		return failureCount;
-	}
-
-	public String getSyncFileStatus() {
-		return syncFileStatus;
-	}
-
-	public String getSyncTransferMode() {
-		return syncTransferMode;
-	}
-
-	public String getNetworkStrength() {
-		return networkStrength;
-	}
-
-	public void setFailureReason(String failureReason) {
-		this.failureReason = failureReason;
-	}
-
-	public void setFailureCount(Integer failureCount) {
-		this.failureCount = failureCount;
-	}
-
-	public void setSyncFileStatus(String syncFileStatus) {
-		this.syncFileStatus = syncFileStatus;
-	}
-
-	public void setSyncTransferMode(String syncTransferMode) {
-		this.syncTransferMode = syncTransferMode;
-	}
-
-	public void setNetworkStrength(String networkStrength) {
-		this.networkStrength = networkStrength;
-	}
-
-	public String getSyncFileName() {
-		return syncFileName;
-	}
-
-	public void setSyncFileName(String syncFileName) {
-		this.syncFileName = syncFileName;
-	}
-
-        public String getNetworkType() {
-            return networkType;
+        if (terminationFlag == null) {
+            return null;
         }
 
-        public void setNetworkType(String networkType) {
-            this.networkType = networkType;
-        }
-        
-        
-
+        return TerminationFlag.from(terminationFlag);
+    }
+    
+    public void setTerminationFlag(TerminationFlag terminationFlag) {
+    	this.terminationFlag = terminationFlag == null ? null : terminationFlag.name();
+    }
 }

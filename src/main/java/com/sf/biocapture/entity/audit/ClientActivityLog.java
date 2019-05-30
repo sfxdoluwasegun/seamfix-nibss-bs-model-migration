@@ -9,6 +9,8 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -28,6 +30,7 @@ import nw.orm.core.IEntity;
 @Setter
 @Entity
 @Table(name = "CLIENT_ACTIVITY_LOG")
+@Inheritance(strategy = InheritanceType.JOINED)
 public class ClientActivityLog extends IEntity {
 
     private static final long serialVersionUID = 7496626320926969760L;

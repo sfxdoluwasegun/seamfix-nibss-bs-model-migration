@@ -44,6 +44,9 @@ public class NibssClientActivityLog extends ClientActivityLog {
     @Column(name = "NIBSS_BVN_VALIDATION_STATUS")
     private String nibssBvnValidationStatus;
 
+    @Column(name = "VERIFICATION_COUNT")
+    private Integer verificationCount;
+
     public String getRecordId() {
         return recordId;
     }
@@ -138,6 +141,14 @@ public class NibssClientActivityLog extends ClientActivityLog {
 
     public void setNibssBvnValidationStatus(String nibssBvnValidationStatus) {
         this.nibssBvnValidationStatus = nibssBvnValidationStatus;
+    }
+
+    public Integer getVerificationCount() {
+        return verificationCount;
+    }
+
+    public void setVerificationCount(Integer verificationCount) {
+        this.verificationCount = verificationCount;
     }
 
 }

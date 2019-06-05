@@ -7,98 +7,137 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "NIBSS_CLIENT_ACTIVITY_LOG")
 public class NibssClientActivityLog extends ClientActivityLog {
-	
-	@Column(name = "RECORD_ID")
-	private String recordId;
-	
-	@Column(name = "BVN")
-	private String bvn;
-	
-	@Column(name = "AGENT_FIRST_NAME")
-	private String agentFirstName;
-	
-	@Column(name = "AGENT_LAST_NAME")
-	private String agentLastName;
-	
-	@Column(name = "APP_NAME")
-	private String appName;
-	
-	@Column(name = "LATITUDE")
-	private String latitude;
-	
-	@Column(name = "LONGITUDE")
-	private String longitude;
-	
-	@Column(name = "SYNC_STATUS")
-	private String syncStatus;
 
-	public String getRecordId() {
-		return recordId;
-	}
+    @Column(name = "RECORD_ID")
+    private String recordId;
 
-	public void setRecordId(String recordId) {
-		this.recordId = recordId;
-	}
+    @Column(name = "BVN")
+    private String bvn;
 
-	public String getBvn() {
-		return bvn;
-	}
+    @Column(name = "AGENT_FIRST_NAME")
+    private String agentFirstName;
 
-	public void setBvn(String bvn) {
-		this.bvn = bvn;
-	}
+    @Column(name = "AGENT_LAST_NAME")
+    private String agentLastName;
 
-	public String getAgentFirstName() {
-		return agentFirstName;
-	}
+    @Column(name = "APP_NAME")
+    private String appName;
 
-	public void setAgentFirstName(String agentFirstName) {
-		this.agentFirstName = agentFirstName;
-	}
+    @Column(name = "LATITUDE")
+    private String latitude;
 
-	public String getAgentLastName() {
-		return agentLastName;
-	}
+    @Column(name = "LONGITUDE")
+    private String longitude;
 
-	public void setAgentLastName(String agentLastName) {
-		this.agentLastName = agentLastName;
-	}
+    @Column(name = "SYNC_STATUS")
+    private String syncStatus;
 
-	public String getAppName() {
-		return appName;
-	}
+    @Column(name = "NIBSS_BVN_VALIDATION_RESP_CODE")
+    private String nibssBvnValidationRespCode;
 
-	public void setAppName(String appName) {
-		this.appName = appName;
-	}
+    @Column(name = "NIBSS_BVN_VALIDATION_RESP_MESSAGE")
+    private String nibssBvnValidationRespMessage;
 
-	public String getLatitude() {
-		return latitude;
-	}
+    @Column(name = "NIBSS_BVN_VALIDATION_RESP_BODY")
+    private String nibssBvnValidationRespBody;
 
-	public void setLatitude(String latitude) {
-		this.latitude = latitude;
-	}
+    @Column(name = "NIBSS_BVN_VALIDATION_STATUS")
+    private String nibssBvnValidationStatus;
 
-	public String getLongitude() {
-		return longitude;
-	}
+    public String getRecordId() {
+        return recordId;
+    }
 
-	public void setLongitude(String longitude) {
-		this.longitude = longitude;
-	}
+    public void setRecordId(String recordId) {
+        this.recordId = recordId;
+    }
 
-	public String getSyncStatus() {
-		return syncStatus;
-	}
+    public String getBvn() {
+        return bvn;
+    }
 
-	public void setSyncStatus(String syncStatus) {
-		this.syncStatus = syncStatus;
-	}
-	
-	
-	
-	
-	
+    public void setBvn(String bvn) {
+        this.bvn = bvn;
+    }
+
+    public String getAgentFirstName() {
+        return agentFirstName;
+    }
+
+    public void setAgentFirstName(String agentFirstName) {
+        this.agentFirstName = agentFirstName;
+    }
+
+    public String getAgentLastName() {
+        return agentLastName;
+    }
+
+    public void setAgentLastName(String agentLastName) {
+        this.agentLastName = agentLastName;
+    }
+
+    public String getAppName() {
+        return appName;
+    }
+
+    public void setAppName(String appName) {
+        this.appName = appName;
+    }
+
+    public String getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
+    }
+
+    public String getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
+    }
+
+    public String getSyncStatus() {
+        return syncStatus;
+    }
+
+    public void setSyncStatus(String syncStatus) {
+        this.syncStatus = syncStatus;
+    }
+
+    public String getNibssBvnValidationRespCode() {
+        return nibssBvnValidationRespCode;
+    }
+
+    public void setNibssBvnValidationRespCode(String nibssBvnValidationRespCode) {
+        this.nibssBvnValidationRespCode = nibssBvnValidationRespCode;
+    }
+
+    public String getNibssBvnValidationRespMessage() {
+        return nibssBvnValidationRespMessage;
+    }
+
+    public void setNibssBvnValidationRespMessage(String nibssBvnValidationRespMessage) {
+        this.nibssBvnValidationRespMessage = nibssBvnValidationRespMessage;
+    }
+
+    public String getNibssBvnValidationRespBody() {
+        return nibssBvnValidationRespBody;
+    }
+
+    public void setNibssBvnValidationRespBody(String nibssBvnValidationRespBody) {
+        this.nibssBvnValidationRespBody = nibssBvnValidationRespBody;
+    }
+
+    public String getNibssBvnValidationStatus() {
+        return nibssBvnValidationStatus;
+    }
+
+    public void setNibssBvnValidationStatus(String nibssBvnValidationStatus) {
+        this.nibssBvnValidationStatus = nibssBvnValidationStatus;
+    }
 
 }

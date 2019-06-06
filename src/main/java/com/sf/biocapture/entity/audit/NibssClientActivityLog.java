@@ -7,6 +7,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "NIBSS_CLIENT_ACTIVITY_LOG")
 public class NibssClientActivityLog extends ClientActivityLog {
+
     @Column(name = "RECORD_ID")
     private String recordId;
 
@@ -45,9 +46,9 @@ public class NibssClientActivityLog extends ClientActivityLog {
 
     @Column(name = "VERIFICATION_COUNT")
     private Integer verificationCount;
-    
+
     @Column(name = "VENDOR_ID")
-	private String vendorId;
+    private String vendorId;
 
     public String getRecordId() {
         return recordId;
@@ -152,13 +153,13 @@ public class NibssClientActivityLog extends ClientActivityLog {
     public void setVerificationCount(Integer verificationCount) {
         this.verificationCount = verificationCount;
     }
-    
-    public String getVendorId() {
-		return vendorId;
-	}
 
-	public void setVendorId(String vendorId) {
-		this.vendorId = vendorId;
-	}
+    public String getVendorId() {
+        return vendorId;
+    }
+
+    public void setVendorId(String vendorId) {
+        this.vendorId = vendorId;
+    }
 
 }

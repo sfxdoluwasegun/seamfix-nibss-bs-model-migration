@@ -31,6 +31,9 @@ public class NibssClientActivityLog extends ClientActivityLog {
 	
 	@Column(name = "SYNC_STATUS")
 	private String syncStatus;
+	
+	@Column(name = "VENDOR_ID")
+	private String vendorId;
 
 	public String getRecordId() {
 		return recordId;
@@ -94,6 +97,14 @@ public class NibssClientActivityLog extends ClientActivityLog {
 
 	public void setSyncStatus(String syncStatus) {
 		this.syncStatus = syncStatus;
+	}
+
+	public String getVendorId() {
+		return vendorId;
+	}
+
+	public void setVendorId(String vendorId) {
+		this.vendorId = vendorId;
 	}
 	
 	

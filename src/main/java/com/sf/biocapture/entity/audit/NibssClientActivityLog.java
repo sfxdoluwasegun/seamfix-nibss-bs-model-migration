@@ -7,6 +7,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "NIBSS_CLIENT_ACTIVITY_LOG")
 public class NibssClientActivityLog extends ClientActivityLog {
+    
     @Column(name = "RECORD_ID")
     private String recordId;
 

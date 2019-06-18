@@ -19,13 +19,9 @@ import com.sf.biocapture.entity.enums.HeartbeatSourceEnum;
 
 import nw.orm.core.IEntity;
 
-/**
- *
- * @author Uche
- * @since Aug 25, 2019 - 4:25:20 PM
- */
+
 @Entity
-@Table(name = "HEART_BEAT_STATUS_EXTENDED")
+@Table(name = "HEART_BEAT_STATUS_EXT")
 public class HeartbeatStatusExtended extends IEntity {
 
     @Column(name = "TAG")

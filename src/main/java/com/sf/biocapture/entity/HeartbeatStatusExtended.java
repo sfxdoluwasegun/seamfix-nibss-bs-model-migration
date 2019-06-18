@@ -418,4 +418,13 @@ public class HeartbeatStatusExtended extends IEntity {
     public void setLocationGenerationTime(Date locationGenerationTime) {
         this.locationGenerationTime = locationGenerationTime;
     }
+
+    public String getVendorAppId() {
+        return vendorAppId;
+    }
+
+    public void setVendorAppId(String vendorAppId) {
+        this.vendorAppId = vendorAppId;
+    }
+
 }

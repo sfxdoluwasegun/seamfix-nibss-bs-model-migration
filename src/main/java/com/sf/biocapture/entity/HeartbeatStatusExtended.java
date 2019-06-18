@@ -19,7 +19,6 @@ import com.sf.biocapture.entity.enums.HeartbeatSourceEnum;
 
 import nw.orm.core.IEntity;
 
-
 @Entity
 @Table(name = "HEART_BEAT_STATUS_EXT")
 public class HeartbeatStatusExtended extends IEntity {

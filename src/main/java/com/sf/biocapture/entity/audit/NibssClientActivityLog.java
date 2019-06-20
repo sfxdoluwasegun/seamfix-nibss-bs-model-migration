@@ -2,16 +2,30 @@ package com.sf.biocapture.entity.audit;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Table;
+
+import com.sf.biocapture.entity.enums.FailureReason;
+import com.sf.biocapture.entity.enums.SyncStatus;
 
 @Entity
 @Table(name = "NIBSS_CLIENT_ACTIVITY_LOG")
 public class NibssClientActivityLog extends ClientActivityLog {
+
+    private static final long serialVersionUID = 5739432620905387657L;
+
     @Column(name = "RECORD_ID")
     private String recordId;
 
+    @Column(name = "FILE_NAME")
+    private String fileName;
+
     @Column(name = "BVN")
     private String bvn;
+
+    @Column(name = "AGENT_BVN")
+    private String agentBvn;
 
     @Column(name = "AGENT_FIRST_NAME")
     private String agentFirstName;
@@ -28,8 +42,13 @@ public class NibssClientActivityLog extends ClientActivityLog {
     @Column(name = "LONGITUDE")
     private String longitude;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "SYNC_STATUS")
-    private String syncStatus;
+    private SyncStatus syncStatus;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "NIBSS_FAILURE_REASON")
+    private FailureReason nibssFailureReason;
 
     @Column(name = "NIBSS_BVN_VALIDATION_RESP_CODE")
     private String nibssBvnValidationRespCode;
@@ -45,7 +64,7 @@ public class NibssClientActivityLog extends ClientActivityLog {
 
     @Column(name = "VERIFICATION_COUNT")
     private Integer verificationCount;
-    
+
     @Column(name = "VENDOR_ID")
 	private String vendorId;
     
@@ -57,6 +76,14 @@ public class NibssClientActivityLog extends ClientActivityLog {
     
     @Column(name = "THRESHOLD_VERSION")
 	private int thresholdVersion;
+
+    public FailureReason getNibssFailureReason() {
+        return nibssFailureReason;
+    }
+
+    public void setNibssFailureReason(FailureReason nibssFailureReason) {
+        this.nibssFailureReason = nibssFailureReason;
+    }
 
     public String getRecordId() {
         return recordId;
@@ -114,11 +141,27 @@ public class NibssClientActivityLog extends ClientActivityLog {
         this.longitude = longitude;
     }
 
-    public String getSyncStatus() {
+    public String getFileName() {
+        return fileName;
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
+    }
+
+    public String getAgentBvn() {
+        return agentBvn;
+    }
+
+    public void setAgentBvn(String agentBvn) {
+        this.agentBvn = agentBvn;
+    }
+
+    public SyncStatus getSyncStatus() {
         return syncStatus;
     }
 
-    public void setSyncStatus(String syncStatus) {
+    public void setSyncStatus(SyncStatus syncStatus) {
         this.syncStatus = syncStatus;
     }
 
@@ -161,16 +204,16 @@ public class NibssClientActivityLog extends ClientActivityLog {
     public void setVerificationCount(Integer verificationCount) {
         this.verificationCount = verificationCount;
     }
-    
+
     public String getVendorId() {
-		return vendorId;
-	}
+        return vendorId;
+    }
 
-	public void setVendorId(String vendorId) {
-		this.vendorId = vendorId;
-	}
+    public void setVendorId(String vendorId) {
+        this.vendorId = vendorId;
+    }
 
-	public String getSyncFileName() {
+    	public String getSyncFileName() {
 		return syncFileName;
 	}
 

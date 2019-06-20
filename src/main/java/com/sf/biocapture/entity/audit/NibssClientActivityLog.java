@@ -48,6 +48,15 @@ public class NibssClientActivityLog extends ClientActivityLog {
     
     @Column(name = "VENDOR_ID")
 	private String vendorId;
+    
+    @Column(name = "SYNC_FILE_NAME")
+    private String syncFileName;
+    
+    @Column(name = "CHECKSUM")
+	private String checksum;
+    
+    @Column(name = "THRESHOLD_VERSION")
+	private int thresholdVersion;
 
     public String getRecordId() {
         return recordId;
@@ -159,6 +168,30 @@ public class NibssClientActivityLog extends ClientActivityLog {
 
 	public void setVendorId(String vendorId) {
 		this.vendorId = vendorId;
+	}
+
+	public String getSyncFileName() {
+		return syncFileName;
+	}
+
+	public void setSyncFileName(String syncFileName) {
+		this.syncFileName = syncFileName;
+	}
+
+	public String getChecksum() {
+		return checksum;
+	}
+
+	public void setChecksum(String checksum) {
+		this.checksum = checksum;
+	}
+
+	public int getThresholdVersion() {
+		return thresholdVersion;
+	}
+
+	public void setThresholdVersion(int thresholdVersion) {
+		this.thresholdVersion = thresholdVersion;
 	}
 
 }

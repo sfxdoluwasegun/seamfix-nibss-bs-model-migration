@@ -67,6 +67,9 @@ public class NibssClientActivityLog extends ClientActivityLog {
     @Column(name = "VENDOR_ID")
     private String vendorId;
 
+    @Column(name = "SYNC_FILE_CHECK_SUM")
+    private String syncFileCheckSum;
+
     public FailureReason getNibssFailureReason() {
         return nibssFailureReason;
     }
@@ -201,6 +204,14 @@ public class NibssClientActivityLog extends ClientActivityLog {
 
     public void setVendorId(String vendorId) {
         this.vendorId = vendorId;
+    }
+
+    public String getSyncFileCheckSum() {
+        return syncFileCheckSum;
+    }
+
+    public void setSyncFileCheckSum(String syncFileCheckSum) {
+        this.syncFileCheckSum = syncFileCheckSum;
     }
 
 }

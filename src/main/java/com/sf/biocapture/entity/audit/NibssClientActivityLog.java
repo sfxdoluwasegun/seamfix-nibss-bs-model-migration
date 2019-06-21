@@ -71,7 +71,7 @@ public class NibssClientActivityLog extends ClientActivityLog {
     @Column(name = "SYNC_FILE_NAME")
     private String syncFileName;
     
-    @Column(name = "CHECKSUM")
+    @Column(name = "SYNC_FILE_CHECK_SUM")
 	private String checksum;
     
     @Column(name = "THRESHOLD_VERSION")

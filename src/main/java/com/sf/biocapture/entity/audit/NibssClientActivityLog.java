@@ -1,7 +1,8 @@
 package com.sf.biocapture.entity.audit;
 
+import com.sf.biocapture.entity.enums.FailureReason;
+import com.sf.biocapture.entity.enums.SyncStatus;
 import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -9,8 +10,6 @@ import javax.persistence.Enumerated;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import com.sf.biocapture.entity.enums.FailureReason;
-import com.sf.biocapture.entity.enums.SyncStatus;
 
 @Entity
 @Table(name = "NIBSS_CLIENT_ACTIVITY_LOG")
@@ -71,11 +70,11 @@ public class NibssClientActivityLog extends ClientActivityLog {
     @Column(name = "VENDOR_ID")
     private String vendorId;
 
+    @Column(name = "SYNC_FILE_CHECK_SUM")
+    private String syncFileCheckSum;
+
     @Column(name = "THRESHOLD_VERSION")
     private int thresholdVersion;
-
-    @Column(name = "SYNC_FILE_CHECK_SUM")
-    private String checksum;
 
     @Column(name = "LOCATION_GEN_TIME")
     @Temporal(TemporalType.TIMESTAMP)
@@ -217,12 +216,12 @@ public class NibssClientActivityLog extends ClientActivityLog {
         this.vendorId = vendorId;
     }
 
-    public String getChecksum() {
-        return checksum;
+    public String getSyncFileCheckSum() {
+        return syncFileCheckSum;
     }
 
-    public void setChecksum(String checksum) {
-        this.checksum = checksum;
+    public void setSyncFileCheckSum(String syncFileCheckSum) {
+        this.syncFileCheckSum = syncFileCheckSum;
     }
 
     public int getThresholdVersion() {
@@ -240,7 +239,5 @@ public class NibssClientActivityLog extends ClientActivityLog {
     public void setLocationGenerationTime(Date locationGenerationTime) {
         this.locationGenerationTime = locationGenerationTime;
     }
-
-   
 
 }

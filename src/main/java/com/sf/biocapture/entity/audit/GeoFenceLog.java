@@ -4,8 +4,8 @@
  * and open the template in the editor.
  */
 package com.sf.biocapture.entity.audit;
-
 import com.sf.biocapture.entity.HeartbeatStatus;
+import com.sf.biocapture.entity.HeartbeatStatusExtended;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -33,8 +33,12 @@ public class GeoFenceLog extends IEntity {
     private String coordinateAddress;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "HEART_BEAT_STATUS_FK", nullable = false)
+    @JoinColumn(name = "HEART_BEAT_STATUS_FK", nullable = true)
     private HeartbeatStatus heartbeatStatus;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "HEART_BEAT_STATUS_EXT_FK", nullable = true)
+    private HeartbeatStatusExtended heartbeatStatusExt;
 
     public Double getLongitude() {
         return longitude;
@@ -59,13 +63,21 @@ public class GeoFenceLog extends IEntity {
     public void setCoordinateAddress(String coordinateAddress) {
         this.coordinateAddress = coordinateAddress;
     }
-    
+
     public HeartbeatStatus getHeartbeatStatus() {
         return heartbeatStatus;
     }
 
     public void setHeartbeatStatus(HeartbeatStatus heartbeatStatus) {
         this.heartbeatStatus = heartbeatStatus;
+    }
+
+    public HeartbeatStatusExtended getHeartbeatStatusExt() {
+        return heartbeatStatusExt;
+    }
+
+    public void setHeartbeatStatusExt(HeartbeatStatusExtended heartbeatStatusExt) {
+        this.heartbeatStatusExt = heartbeatStatusExt;
     }
 
 }

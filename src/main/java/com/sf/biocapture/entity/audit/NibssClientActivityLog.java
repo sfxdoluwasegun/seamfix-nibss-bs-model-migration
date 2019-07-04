@@ -1,7 +1,8 @@
 package com.sf.biocapture.entity.audit;
 
+import com.sf.biocapture.entity.enums.FailureReason;
+import com.sf.biocapture.entity.enums.SyncStatus;
 import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -9,9 +10,6 @@ import javax.persistence.Enumerated;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-
-import com.sf.biocapture.entity.enums.FailureReason;
-import com.sf.biocapture.entity.enums.SyncStatus;
 
 @Entity
 @Table(name = "NIBSS_CLIENT_ACTIVITY_LOG")
@@ -70,14 +68,14 @@ public class NibssClientActivityLog extends ClientActivityLog {
     private Integer verificationCount;
 
     @Column(name = "VENDOR_ID")
-	private String vendorId;
-    
+    private String vendorId;
+
     @Column(name = "SYNC_FILE_CHECK_SUM")
-	private String checksum;
-    
+    private String syncFileCheckSum;
+
     @Column(name = "THRESHOLD_VERSION")
-	private int thresholdVersion;
-    
+    private int thresholdVersion;
+
     @Column(name = "LOCATION_GEN_TIME")
     @Temporal(TemporalType.TIMESTAMP)
     private Date locationGenerationTime;
@@ -221,37 +219,28 @@ public class NibssClientActivityLog extends ClientActivityLog {
         this.vendorId = vendorId;
     }
 
-   	public String getChecksum() {
-		return checksum;
-	}
+    public String getSyncFileCheckSum() {
+        return syncFileCheckSum;
+    }
 
-	public void setChecksum(String checksum) {
-		this.checksum = checksum;
-	}
+    public void setSyncFileCheckSum(String syncFileCheckSum) {
+        this.syncFileCheckSum = syncFileCheckSum;
+    }
 
-	public int getThresholdVersion() {
-		return thresholdVersion;
-	}
+    public int getThresholdVersion() {
+        return thresholdVersion;
+    }
 
-	public void setThresholdVersion(int thresholdVersion) {
-		this.thresholdVersion = thresholdVersion;
-	}
+    public void setThresholdVersion(int thresholdVersion) {
+        this.thresholdVersion = thresholdVersion;
+    }
 
-	public Date getLocationGenerationTime() {
-		return locationGenerationTime;
-	}
+    public Date getLocationGenerationTime() {
+        return locationGenerationTime;
+    }
 
-	public void setLocationGenerationTime(Date locationGenerationTime) {
-		this.locationGenerationTime = locationGenerationTime;
-	}
-	
-	public Boolean getCapturedOffline() {
-		return capturedOffline;
-	}
-
-	public void setCapturedOffline(Boolean capturedOffline) {
-		this.capturedOffline = capturedOffline;
-	}
-
+    public void setLocationGenerationTime(Date locationGenerationTime) {
+        this.locationGenerationTime = locationGenerationTime;
+    }
 
 }

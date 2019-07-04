@@ -79,6 +79,9 @@ public class NibssClientActivityLog extends ClientActivityLog {
     @Column(name = "LOCATION_GEN_TIME")
     @Temporal(TemporalType.TIMESTAMP)
     private Date locationGenerationTime;
+    
+    @Column(name="CAPTURED_OFFLINE")
+    private Boolean capturedOffline;
 
     public FailureReason getNibssFailureReason() {
         return nibssFailureReason;

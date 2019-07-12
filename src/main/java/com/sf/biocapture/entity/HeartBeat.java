@@ -164,7 +164,10 @@ public class HeartBeat extends BaseEntity {
     private Timestamp responseTime;
     
     @Column(name = "DISPLAY_INCORRECT_TIME")
-    private Boolean displayIncorrectTime;//current setting value for displayIncorrectTime setting 
+    private Boolean displayIncorrectTime;//current setting value for displayIncorrectTime setting
+    
+    @Column(name = "AGENT_EMAIL")
+    private String agentEmail;
 
     public HeartBeat() {
 
@@ -552,6 +555,14 @@ public class HeartBeat extends BaseEntity {
 
 	public void setDisplayIncorrectTime(Boolean displayIncorrectTime) {
 		this.displayIncorrectTime = displayIncorrectTime;
+	}
+
+	public String getAgentEmail() {
+		return agentEmail;
+	}
+
+	public void setAgentEmail(String agentEmail) {
+		this.agentEmail = agentEmail;
 	}
 
 }

@@ -52,17 +52,39 @@ public class NibssClientActivityLog extends ClientActivityLog {
     @Column(name = "NIBSS_FAILURE_REASON")
     private FailureReason nibssFailureReason;
 
-    @Column(name = "NIBSS_BVN_VALIDATION_RESP_CODE")
-    private String nibssBvnValidationRespCode;
+    @Column(name = "COMPLETION_STATUS_FLAG")
+    private String completionStatusFlag;
 
-    @Column(name = "NIBSS_BVN_VALIDATION_RESP_MESSAGE")
-    private String nibssBvnValidationRespMessage;
+    @Column(name = "BATCH_ID")
+    private String batchId;
 
-    @Column(name = "NIBSS_BVN_VALIDATION_RESP_BODY")
-    private String nibssBvnValidationRespBody;
+    @Column(name = "IMPORT_DATE")
+    private String importDate;
 
-    @Column(name = "NIBSS_BVN_VALIDATION_STATUS")
-    private String nibssBvnValidationStatus;
+    @Column(name = "IMPORT_STATUS")
+    private String importStatus;
+
+    @Column(name = "HQ_TICKET_ID")
+    private String hqTicketId;
+
+    @Column(name = "SURNAME")
+    private String surname;
+
+    @Column(name = "USERNAME")
+    private String username;
+    @Column(name = "FIRSTNAME")
+    private String firstname;
+    @Column(name = "DATE_OF_BIRTH")
+    private String dateOfBirth;
+
+    @Column(name = "GENDER")
+    private String gender;
+
+    @Column(name = "ENROLMENT_STATUS")
+    private String enrolmentStatus;
+
+    @Column(name = "WORKFLOW_STATUS")
+    private String workflowStatus;
 
     @Column(name = "VERIFICATION_COUNT")
     private Integer verificationCount;
@@ -71,25 +93,17 @@ public class NibssClientActivityLog extends ClientActivityLog {
     private String vendorId;
 
     @Column(name = "SYNC_FILE_CHECK_SUM")
-    private String syncFileCheckSum;
+    private String checksum;
 
     @Column(name = "THRESHOLD_VERSION")
-    private int thresholdVersion;
+    private Integer thresholdVersion;
 
     @Column(name = "LOCATION_GEN_TIME")
     @Temporal(TemporalType.TIMESTAMP)
     private Date locationGenerationTime;
-    
-    @Column(name="CAPTURED_OFFLINE")
+
+    @Column(name = "CAPTURED_OFFLINE")
     private Boolean capturedOffline;
-
-    public FailureReason getNibssFailureReason() {
-        return nibssFailureReason;
-    }
-
-    public void setNibssFailureReason(FailureReason nibssFailureReason) {
-        this.nibssFailureReason = nibssFailureReason;
-    }
 
     public String getRecordId() {
         return recordId;
@@ -99,12 +113,28 @@ public class NibssClientActivityLog extends ClientActivityLog {
         this.recordId = recordId;
     }
 
+    public String getFileName() {
+        return fileName;
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
+    }
+
     public String getBvn() {
         return bvn;
     }
 
     public void setBvn(String bvn) {
         this.bvn = bvn;
+    }
+
+    public String getAgentBvn() {
+        return agentBvn;
+    }
+
+    public void setAgentBvn(String agentBvn) {
+        this.agentBvn = agentBvn;
     }
 
     public String getAgentFirstName() {
@@ -147,22 +177,6 @@ public class NibssClientActivityLog extends ClientActivityLog {
         this.longitude = longitude;
     }
 
-    public String getFileName() {
-        return fileName;
-    }
-
-    public void setFileName(String fileName) {
-        this.fileName = fileName;
-    }
-
-    public String getAgentBvn() {
-        return agentBvn;
-    }
-
-    public void setAgentBvn(String agentBvn) {
-        this.agentBvn = agentBvn;
-    }
-
     public SyncStatus getSyncStatus() {
         return syncStatus;
     }
@@ -171,36 +185,108 @@ public class NibssClientActivityLog extends ClientActivityLog {
         this.syncStatus = syncStatus;
     }
 
-    public String getNibssBvnValidationRespCode() {
-        return nibssBvnValidationRespCode;
+    public FailureReason getNibssFailureReason() {
+        return nibssFailureReason;
     }
 
-    public void setNibssBvnValidationRespCode(String nibssBvnValidationRespCode) {
-        this.nibssBvnValidationRespCode = nibssBvnValidationRespCode;
+    public void setNibssFailureReason(FailureReason nibssFailureReason) {
+        this.nibssFailureReason = nibssFailureReason;
     }
 
-    public String getNibssBvnValidationRespMessage() {
-        return nibssBvnValidationRespMessage;
+    public String getCompletionStatusFlag() {
+        return completionStatusFlag;
     }
 
-    public void setNibssBvnValidationRespMessage(String nibssBvnValidationRespMessage) {
-        this.nibssBvnValidationRespMessage = nibssBvnValidationRespMessage;
+    public void setCompletionStatusFlag(String completionStatusFlag) {
+        this.completionStatusFlag = completionStatusFlag;
     }
 
-    public String getNibssBvnValidationRespBody() {
-        return nibssBvnValidationRespBody;
+    public String getBatchId() {
+        return batchId;
     }
 
-    public void setNibssBvnValidationRespBody(String nibssBvnValidationRespBody) {
-        this.nibssBvnValidationRespBody = nibssBvnValidationRespBody;
+    public void setBatchId(String batchId) {
+        this.batchId = batchId;
     }
 
-    public String getNibssBvnValidationStatus() {
-        return nibssBvnValidationStatus;
+    public String getImportDate() {
+        return importDate;
     }
 
-    public void setNibssBvnValidationStatus(String nibssBvnValidationStatus) {
-        this.nibssBvnValidationStatus = nibssBvnValidationStatus;
+    public void setImportDate(String importDate) {
+        this.importDate = importDate;
+    }
+
+    public String getImportStatus() {
+        return importStatus;
+    }
+
+    public void setImportStatus(String importStatus) {
+        this.importStatus = importStatus;
+    }
+
+    public String getHqTicketId() {
+        return hqTicketId;
+    }
+
+    public void setHqTicketId(String hqTicketId) {
+        this.hqTicketId = hqTicketId;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public String getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getEnrolmentStatus() {
+        return enrolmentStatus;
+    }
+
+    public void setEnrolmentStatus(String enrolmentStatus) {
+        this.enrolmentStatus = enrolmentStatus;
+    }
+
+    public String getWorkflowStatus() {
+        return workflowStatus;
+    }
+
+    public void setWorkflowStatus(String workflowStatus) {
+        this.workflowStatus = workflowStatus;
     }
 
     public Integer getVerificationCount() {
@@ -219,19 +305,19 @@ public class NibssClientActivityLog extends ClientActivityLog {
         this.vendorId = vendorId;
     }
 
-    public String getSyncFileCheckSum() {
-        return syncFileCheckSum;
+    public String getChecksum() {
+        return checksum;
     }
 
-    public void setSyncFileCheckSum(String syncFileCheckSum) {
-        this.syncFileCheckSum = syncFileCheckSum;
+    public void setChecksum(String checksum) {
+        this.checksum = checksum;
     }
 
-    public int getThresholdVersion() {
+    public Integer getThresholdVersion() {
         return thresholdVersion;
     }
 
-    public void setThresholdVersion(int thresholdVersion) {
+    public void setThresholdVersion(Integer thresholdVersion) {
         this.thresholdVersion = thresholdVersion;
     }
 
@@ -241,6 +327,14 @@ public class NibssClientActivityLog extends ClientActivityLog {
 
     public void setLocationGenerationTime(Date locationGenerationTime) {
         this.locationGenerationTime = locationGenerationTime;
+    }
+
+    public Boolean getCapturedOffline() {
+        return capturedOffline;
+    }
+
+    public void setCapturedOffline(Boolean capturedOffline) {
+        this.capturedOffline = capturedOffline;
     }
 
 }
